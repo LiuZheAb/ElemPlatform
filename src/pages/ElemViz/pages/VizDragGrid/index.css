@@ -1,0 +1,59 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-color: #333;
+    overflow: hidden;
+}
+
+.source {
+    width: 240px;
+    height: 100%;
+    border-right: 1px solid #666;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.source-item {
+    color: white;
+    cursor: move;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.source-item .source-img {
+    width: 100%;
+}
+
+.target {
+    width: calc(100% - 240px);
+    overflow: hidden;
+}
+
+.target .ant-row {
+    height: 20%;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.target-box {
+    border: 1px solid #666;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    position: relative;
+}
+
+.dragbar::before {
+    color: #fff;
+}
+
+.target-box:hover .dragbar:before {
+    content: "按住此处拖拽";
+    width: 100%;
+    height: 30px;
+    background-color: #555;
+    position: absolute;
+    display: block;
+}
