@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Form, Input, Upload, Button, message } from 'antd';
 import axios from "axios";
-import "./index.css";
+import "./index.less";
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
 import { baseUrl } from "../../assets/url";
 const layout = {

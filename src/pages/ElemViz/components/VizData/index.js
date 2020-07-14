@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Upload, Button } from 'antd';
-import "./index.css";
+import "./index.less";
 import { InboxOutlined } from '@ant-design/icons';
 import { baseUrl } from "../../assets/url";
 const layout = {

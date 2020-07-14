@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Layout, Menu } from 'antd';
 import IconFont from '../IconFont';
 import { Link } from "react-router-dom";
-import "./index.css";
+import "./index.less";
 
 const { Sider } = Layout;
 
@@ -36,27 +36,27 @@ export default class index extends Component {
                 <Menu mode="inline" id="sider-menu">
                     <Menu.Item key="0">
                         <IconFont type="vizhome1" />
-                        <Link to="/home">首页</Link>
+                        <Link to="/viz/home">首页</Link>
                     </Menu.Item>
                     <Menu.Item key="1">
                         <IconFont type="vizall" />
-                        <Link to="/vizlist">所有项目</Link>
+                        <Link to="/viz/vizlist">所有项目</Link>
                     </Menu.Item>
                     <Menu.Item key="2">
                         <IconFont type="viznewtype" />
-                        <Link to="/newviz">新建项目</Link>
+                        <Link to="/viz/newviz">新建项目</Link>
                     </Menu.Item>
                     {/* <Menu.Item key="3">
                         <DesktopOutlined />
-                        <Link to="/vizdrag">拖拽</Link>
+                        <Link to="/viz/vizdrag">拖拽</Link>
                     </Menu.Item> */}
                     <Menu.Item key="3">
                         <IconFont type="vizhand" />
-                        <Link to="/vizdraggrid">拖拽</Link>
+                        <Link to="/viz/vizdraggrid">拖拽</Link>
                     </Menu.Item>
                     <Menu.Item key="4">
                         <IconFont type="vizdizhi" />
-                        <Link to="/echarts">疫情地图</Link>
+                        <Link to="/viz/echarts">疫情地图</Link>
                     </Menu.Item>
                 </Menu>
             </Sider>

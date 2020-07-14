@@ -3,7 +3,7 @@ import { List, message } from 'antd';
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { baseUrl } from "../../assets/url";
-import './index.css';
+import './index.less';
 
 export default class index extends Component {
     state = {

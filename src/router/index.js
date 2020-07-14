@@ -12,14 +12,17 @@ export default class index extends Component {
             <Router>
                 <Suspense fallback={<Loader />}>
                     <Switch>
-                        <Route exact path={["/", "/platform"]}>
+                        <Route path="/platform">
                             <Home />
                         </Route>
-                        <Route exact path={["/viz"]}>
+                        <Route path="/viz">
                             <ElemViz />
                         </Route>
-                        <Route exact path={["/stream"]}>
+                        <Route path="/stream">
                             <ElemStream />
+                        </Route>
+                        <Route exact path="/">
+                            <Home />
                         </Route>
                     </Switch>
                 </Suspense>

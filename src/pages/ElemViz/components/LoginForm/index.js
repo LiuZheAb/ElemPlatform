@@ -2,7 +2,7 @@
 import React from 'react';
 import { Form, Input, Button, message, Row, Col } from 'antd';
 import axios from 'axios';
-import './index.css';
+import './index.less';
 import { UserOutlined, LockOutlined, SafetyCertificateOutlined } from '@ant-design/icons';
 import { baseUrl } from '../../assets/url';
 import { setCookie } from '../../utils/cookies';

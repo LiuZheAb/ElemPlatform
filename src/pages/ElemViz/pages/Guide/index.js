@@ -6,7 +6,7 @@ import { baseUrl } from "../../assets/url";
 import { Link } from "react-router-dom";
 import IconFont from "../../components/IconFont";
 import axios from "axios";
-import "./index.css";
+import "./index.less";
 const { Header } = Layout;
 const { confirm } = Modal;
 
@@ -81,11 +81,11 @@ export default class index extends Component {
                                 <IconFont type="vizego-menu"></IconFont>
                             </div>
                             <Menu mode="inline" inlineCollapsed={collapsed}>
-                                <Menu.Item key="1"><Link className="nav" to="/home">首页</Link></Menu.Item>
-                                <Menu.Item key="2"><Link className="nav" to="/vizlist">所有项目</Link></Menu.Item>
-                                <Menu.Item key="3"><Link className="nav" to="/newviz">新建项目</Link></Menu.Item>
-                                <Menu.Item key="4"><Link className="nav" to="/vizdraggrid">拖拽</Link></Menu.Item>
-                                <Menu.Item key="5"><Link className="nav" to="/echarts">疫情地图</Link></Menu.Item>
+                                <Menu.Item key="1"><Link className="nav" to="/viz/home">首页</Link></Menu.Item>
+                                <Menu.Item key="2"><Link className="nav" to="/viz/vizlist">所有项目</Link></Menu.Item>
+                                <Menu.Item key="3"><Link className="nav" to="/viz/newviz">新建项目</Link></Menu.Item>
+                                <Menu.Item key="4"><Link className="nav" to="/viz/vizdraggrid">拖拽</Link></Menu.Item>
+                                <Menu.Item key="5"><Link className="nav" to="/viz/echarts">疫情地图</Link></Menu.Item>
                             </Menu>
                         </div>
                         <div style={{ display: "flex", alignItems: "center", height: 50 }}>
@@ -93,11 +93,11 @@ export default class index extends Component {
                                 <img src={require("../../assets/images/logo-row.png")} alt="" />
                             </div>
                             <div className="header-nav">
-                                <Link className="nav" to="/home">首页</Link>
-                                <Link className="nav" to="/vizlist">所有项目</Link>
-                                <Link className="nav" to="/newviz">新建项目</Link>
-                                <Link className="nav" to="/vizdraggrid">拖拽</Link>
-                                <Link className="nav" to="/echarts">疫情地图</Link>
+                                <Link className="nav" to="/viz/home">首页</Link>
+                                <Link className="nav" to="/viz/vizlist">所有项目</Link>
+                                <Link className="nav" to="/viz/newviz">新建项目</Link>
+                                <Link className="nav" to="/viz/vizdraggrid">拖拽</Link>
+                                <Link className="nav" to="/viz/echarts">疫情地图</Link>
                             </div>
                         </div>
                         <div className="logout">

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import "./index.css"
+import "./index.less"
 import { Layout, Drawer, Switch } from 'antd';
-import './index.css';
 import IconFont from "../../components/IconFont";
 import { Link } from 'react-router-dom';
 import axios from "axios";

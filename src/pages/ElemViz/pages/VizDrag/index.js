@@ -7,7 +7,7 @@ import HTML5Backend from "react-dnd-html5-backend";
 import { Layout } from "antd";
 import _ from "lodash";
 import axios from "axios";
-import "./index.css";
+import "./index.less";
 import { baseUrl } from "../../assets/url";
 
 const { Content } = Layout;

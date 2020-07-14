@@ -3,7 +3,7 @@ import React from 'react';
 import { Form, Input, Button, Tooltip, AutoComplete, message, Row, Col } from 'antd';
 import axios from 'axios';
 import { baseUrl } from '../../assets/url';
-import './index.css';
+import './index.less';
 import { setCookie } from '../../utils/cookies';
 import { UserOutlined, LockOutlined, MailOutlined, SafetyCertificateOutlined } from '@ant-design/icons';
 

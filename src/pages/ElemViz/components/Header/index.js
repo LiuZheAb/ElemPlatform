@@ -2,7 +2,7 @@ import React, { Component, lazy } from 'react';
 import { Layout, Button, Modal } from 'antd';
 import { getCookie, removeCookie } from '../../utils/cookies';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
-import './index.css';
+import './index.less';
 
 const { Header } = Layout;
 const { confirm } = Modal;
