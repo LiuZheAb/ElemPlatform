@@ -2,7 +2,7 @@ import React, { Component, Suspense, lazy } from 'react';
 import { Switch, HashRouter as Router, Route } from "react-router-dom";
 import Loader from '../components/Loader';
 
-const Home = lazy(() => import('../pages/Home'));
+const Platform = lazy(() => import('../pages/Platform'));
 const ElemViz = lazy(() => import('../pages/ElemViz'));
 const ElemStream = lazy(() => import('../pages/ElemStream'));
 
@@ -13,7 +13,7 @@ export default class index extends Component {
                 <Suspense fallback={<Loader />}>
                     <Switch>
                         <Route path="/platform">
-                            <Home />
+                            <Platform />
                         </Route>
                         <Route path="/viz">
                             <ElemViz />
@@ -22,7 +22,7 @@ export default class index extends Component {
                             <ElemStream />
                         </Route>
                         <Route exact path="/">
-                            <Home />
+                            <Platform />
                         </Route>
                     </Switch>
                 </Suspense>
