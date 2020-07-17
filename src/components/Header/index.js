@@ -2,6 +2,8 @@ import React, { Component, lazy } from 'react';
 import { Menu, Modal } from 'antd';
 import { getCookie, removeCookie } from '../../utils/cookies';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
+import { Link, withRouter } from "react-router-dom";
+import IconFont from "../../components/IconFont";
 import "./index.less";
 
 const { confirm } = Modal;
@@ -9,11 +11,12 @@ const Login = lazy(() => import('../LoginForm'));
 const Register = lazy(() => import('../RegisterForm'));
 const { SubMenu } = Menu;
 
-export default class index extends Component {
+class index extends Component {
     state = {
         userName: getCookie("userName") ? getCookie("userName") : "",
         visible: false,
-        isLogin: true
+        isLogin: true,
+        collapsed: true,
     };
     showConfirm = () => {
         let _this = this;
@@ -43,26 +46,59 @@ export default class index extends Component {
             isLogin: !isLogin
         })
     }
+    toggleCollapsed = () => {
+        let { collapsed } = this.state;
+        this.setState({
+            collapsed: !collapsed,
+        });
+    };
     render() {
-        const { userName, visible, isLogin } = this.state;
+        const { userName, visible, isLogin, collapsed } = this.state;
+        let pathSnippets = this.props.location.pathname.split('/').filter(i => i);
+        let defaultSelectedKeys = "platform";
+        if (pathSnippets.length !== 0) {
+            defaultSelectedKeys = pathSnippets[0]
+        }
         return (
             <div className="header">
-                <img className="logo" src={require("../../assets/images/logo-row.png")} alt="" />
-                <Menu onClick={this.handleClick} mode="horizontal">
-                    <Menu.Item key="Elem P">
-                        Elem P
-                    </Menu.Item>
-                    <Menu.Item key="Elem V">
-                        Elem V
-                    </Menu.Item>
-                    <Menu.Item key="Elem D">
-                        Elem D
-                    </Menu.Item>
-                    <SubMenu title="帮助">
-                        <Menu.Item key="Elem V文档">Elem V文档</Menu.Item>
-                        <Menu.Item key="Elem D文档">Elem D文档</Menu.Item>
-                    </SubMenu>
-                </Menu>
+                <div className="vertical-menu">
+                    <div className="menu-btn" onClick={this.toggleCollapsed}>
+                        <IconFont type="vizego-menu"></IconFont>
+                    </div>
+                    <Menu mode="vertical" inlineCollapsed={collapsed}>
+                        <Menu.Item key="platform">
+                            <Link to="/platform">Elem P</Link>
+                        </Menu.Item>
+                        <Menu.Item key="viz">
+                            <Link to="/viz">Elem V</Link>
+                        </Menu.Item>
+                        <Menu.Item key="dataflow">
+                            <Link to="/dataflow">Elem D</Link>
+                        </Menu.Item>
+                        <SubMenu title="帮助">
+                            <Menu.Item key="Elem V文档">Elem V文档</Menu.Item>
+                            <Menu.Item key="Elem D文档">Elem D文档</Menu.Item>
+                        </SubMenu>
+                    </Menu>
+                </div>
+                <div className="horizontal-menu">
+                    <img className="logo" src={require("../../assets/images/logo-row.png")} alt="" />
+                    <Menu mode="horizontal" defaultSelectedKeys={defaultSelectedKeys}>
+                        <Menu.Item key="platform">
+                            <Link to="/platform">Elem P</Link>
+                        </Menu.Item>
+                        <Menu.Item key="viz">
+                            <Link to="/viz">Elem V</Link>
+                        </Menu.Item>
+                        <Menu.Item key="dataflow">
+                            <Link to="/dataflow">Elem D</Link>
+                        </Menu.Item>
+                        <SubMenu title="帮助">
+                            <Menu.Item key="Elem V文档">Elem V文档</Menu.Item>
+                            <Menu.Item key="Elem D文档">Elem D文档</Menu.Item>
+                        </SubMenu>
+                    </Menu>
+                </div>
                 <div className="login-btn">
                     {userName ? userName : <span onClick={this.showModal}>登录</span>}
                 </div>
@@ -91,3 +127,5 @@ export default class index extends Component {
         )
     }
 }
+
+export default withRouter(index);

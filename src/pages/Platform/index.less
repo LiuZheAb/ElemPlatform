@@ -1,5 +1,37 @@
+@productHeight: 450px;
+
 #platform {
     width: 100vw;
     height: 100vh;
     background: url("../../assets/images/background.png") no-repeat center;
+    padding-top: 50px;
+
+    .name {
+        height: calc(100vh - @productHeight - 50px);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 100%;
+            max-width: 784px;
+        }
+    }
+
+    .product-block {
+        height: @productHeight;
+        width: 100%;
+        display: flex;
+
+        .product {
+            width: 50%;
+            height: @productHeight;
+            text-align: center;
+            line-height: @productHeight;
+            background-color: #fff;
+            border: 1px solid #000;
+            box-sizing: border-box;
+        }
+    }
 }

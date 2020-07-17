@@ -5,7 +5,7 @@ const { Content } = Layout;
 
 const VizList = lazy(() => import('../VizList'));
 const NewViz = lazy(() => import('../NewViz'));
-const VizData = lazy(() => import('../VizData'));
+const VizData = lazy(() => import('../NewViz/vizdata'));
 const Echarts = lazy(() => import('../Echarts'));
 
 export default class index extends Component {
@@ -21,10 +21,10 @@ export default class index extends Component {
             >
                 <Router>
                     <Switch>
-                        <Route exact path={["/vizlist", "/home"]} component={VizList} />
-                        <Route exact path="/newviz" component={NewViz} />
-                        <Route exact path="/newviz/uploadData" component={VizData} />
-                        <Route exact path="/echarts" component={Echarts} />
+                        <Route exact path="/viz/vizlist" component={VizList} />
+                        <Route exact path="/viz/newviz" component={NewViz} />
+                        <Route exact path="/viz/newviz/uploadData" component={VizData} />
+                        <Route exact path="/viz/echarts" component={Echarts} />
                     </Switch>
                 </Router>
             </Content>

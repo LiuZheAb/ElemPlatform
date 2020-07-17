@@ -1,61 +1,29 @@
-#sider {
+#viz-sider {
     background: #DDD;
-    /* height: calc(100vh - 50px); */
-    /* background: #fff; */
-}
 
-#sider .ant-menu {
-    background: #DDD;
-    /* background: #fff; */
-}
+    .ant-menu {
+        background: #DDD;
+        color: rgba(0, 0, 0, 0.65);
 
-#sider .ant-menu-item-active,
-#sider .ant-menu-item-active a {
-    color: #5a9edd;
-}
+        &-item:after {
+            border-color: #20d5c6;
+        }
 
-#sider .ant-menu-item-selected,
-#sider .ant-menu-item-selected a {
-    color: #5a9edd;
-}
+        &-item-active,
+        &-item-selected {
 
-#sider a {
-    color: rgba(0, 0, 0, 0.65);
-}
+            a,
+            .anticon {
+                color: #20d5c6;
+            }
 
-.ant-layout-sider #sider-menu {
-    width: 200px;
-}
+            .anticon {
+                transition: color 0.3s;
+            }
+        }
 
-.ant-layout-sider-collapsed #sider-menu {
-    width: 80px;
-}
-
-#sider .ant-menu-item:after {
-    border-color: #5a9edd;
-}
-
-#sider .ant-layout-sider-trigger {
-    background: #326493;
-}
-
-#sider .ant-menu-item-active,
-#sider .ant-menu-item-active a,
-#sider .ant-menu-item-active .anticon {
-    color: #20d5c6 !important;
-    transition: color 0.3s;
-}
-
-#sider .ant-menu-item-selected,
-#sider .ant-menu-item-selected a,
-#sider .ant-menu-item-active .anticon {
-    color: #20d5c6;
-}
-
-#sider .ant-menu-item:after {
-    border-color: #20d5c6;
-}
-
-.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
-    background-color: #e6ffff;
+        &-item-selected {
+            background-color: #e6ffff;
+        }
+    }
 }

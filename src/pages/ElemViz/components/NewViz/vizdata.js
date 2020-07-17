@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Form, Upload, Button } from 'antd';
-import "./index.less";
 import { InboxOutlined } from '@ant-design/icons';
 import { baseUrl } from "../../assets/url";
+
 const layout = {
     labelCol: { span: 8 },
     wrapperCol: { span: 16 },
@@ -33,13 +33,13 @@ export default class index extends Component {
     };
     onFinish = values => {
         if (!this.state.loading) {
-            this.props.history.push("/home");
+            this.props.history.push("/viz/vizlist");
         }
         localStorage.removeItem("newProjectName");
     };
     render() {
         return (
-            <div className="vizdata-content">
+            <div className="vizdata-content" style={{ maxWidth: 600 }}>
                 <Form {...layout} onFinish={this.onFinish}>
                     <Form.Item label="Dragger">
                         <Form.Item name="data" valuePropName="fileList" getValueFromEvent={normFile} noStyle rules={[{ required: true, message: "请上传数据源文件" }]}>

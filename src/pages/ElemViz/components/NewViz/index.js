@@ -4,6 +4,7 @@ import axios from "axios";
 import "./index.less";
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
 import { baseUrl } from "../../assets/url";
+
 const layout = {
     labelCol: { span: 8 },
     wrapperCol: { span: 16 },
@@ -63,7 +64,7 @@ export default class index extends Component {
                 }
             }).then(function (response) {
                 if (response.data.state === 1) {
-                    _this.props.history.push("/newviz/uploadData")
+                    _this.props.history.push("/viz/newviz/uploadData")
                     message.success("新建成功", 2);
                 } else if (response.data.state === 2) {
                     message.error("项目创建失败");

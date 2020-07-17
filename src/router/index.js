@@ -4,7 +4,7 @@ import Loader from '../components/Loader';
 
 const Platform = lazy(() => import('../pages/Platform'));
 const ElemViz = lazy(() => import('../pages/ElemViz'));
-const ElemStream = lazy(() => import('../pages/ElemStream'));
+const ElemDataFlow = lazy(() => import('../pages/ElemDataFlow'));
 
 export default class index extends Component {
     render() {
@@ -18,8 +18,8 @@ export default class index extends Component {
                         <Route path="/viz">
                             <ElemViz />
                         </Route>
-                        <Route path="/stream">
-                            <ElemStream />
+                        <Route path="/dataflow">
+                            <ElemDataFlow />
                         </Route>
                         <Route exact path="/">
                             <Platform />

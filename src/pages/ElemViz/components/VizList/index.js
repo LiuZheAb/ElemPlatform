@@ -13,7 +13,6 @@ export default class index extends Component {
         let _this = this;
         axios.get(baseUrl + "/vtkPro")
             .then(function (response) {
-                console.log(response.data.data)
                 _this.setState({
                     projectList: response.data.data === null ? [] : response.data.data
                 });
@@ -43,8 +42,8 @@ export default class index extends Component {
                 }}
                 className="viz-list"
                 renderItem={projectList !== null && projectList.length > 0 ? item => (
-                    <List.Item key={item.projectName} className="list-item">
-                        <Link to={"/viz"} onClick={this.storageProject.bind(this, item.projectName)}>
+                    <List.Item key={item.projectName}>
+                        <Link to={"/viz/viz"} onClick={this.storageProject.bind(this, item.projectName)}>
                             <div className="box">
                                 <img src={baseUrl + item.iconUrl} alt={item.projectName} />
                                 <div className="box-content">

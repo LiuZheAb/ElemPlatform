@@ -1,48 +1,26 @@
 import React, { Component } from 'react';
 import { Layout, Menu } from 'antd';
 import IconFont from '../IconFont';
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "./index.less";
 
 const { Sider } = Layout;
 
-export default class index extends Component {
-    state = {
-        collapsed: false,
-    };
-    // componentDidMount() {
-    //     let oDiv = document.getElementById("sider-menu"),
-    //         H = 0,
-    //         Y = oDiv;
-    //     while (Y) {
-    //         H += Y.offsetTop;
-    //         Y = Y.offsetParent;
-    //     }
-    //     window.onscroll = function () {
-    //         var s = document.body.scrollTop || document.documentElement.scrollTop
-    //         if (s > H) {
-    //             oDiv.style = "position:fixed;top:0;"
-    //         } else {
-    //             oDiv.style = ""
-    //         }
-    //     }
-    // }
-    onCollapse = collapsed => {
-        this.setState({ collapsed });
-    };
+class index extends Component {
     render() {
+        let pathSnippets = this.props.location.pathname.split('/').filter(i => i);
+        let defaultSelectedKeys = "viz";
+        if (pathSnippets.length !== 1) {
+            defaultSelectedKeys = pathSnippets[1]
+        }
         return (
-            <Sider id="sider" collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
-                <Menu mode="inline" id="sider-menu">
-                    <Menu.Item key="0">
-                        <IconFont type="vizhome1" />
-                        <Link to="/viz/home">首页</Link>
-                    </Menu.Item>
-                    <Menu.Item key="1">
+            <Sider id="viz-sider">
+                <Menu mode="inline" defaultSelectedKeys={defaultSelectedKeys}>
+                    <Menu.Item key="vizlist">
                         <IconFont type="vizall" />
                         <Link to="/viz/vizlist">所有项目</Link>
                     </Menu.Item>
-                    <Menu.Item key="2">
+                    <Menu.Item key="newviz">
                         <IconFont type="viznewtype" />
                         <Link to="/viz/newviz">新建项目</Link>
                     </Menu.Item>
@@ -50,11 +28,11 @@ export default class index extends Component {
                         <DesktopOutlined />
                         <Link to="/viz/vizdrag">拖拽</Link>
                     </Menu.Item> */}
-                    <Menu.Item key="3">
+                    <Menu.Item key="vizdraggrid">
                         <IconFont type="vizhand" />
                         <Link to="/viz/vizdraggrid">拖拽</Link>
                     </Menu.Item>
-                    <Menu.Item key="4">
+                    <Menu.Item key="echarts">
                         <IconFont type="vizdizhi" />
                         <Link to="/viz/echarts">疫情地图</Link>
                     </Menu.Item>
@@ -63,3 +41,5 @@ export default class index extends Component {
         )
     }
 }
+
+export default withRouter(index);

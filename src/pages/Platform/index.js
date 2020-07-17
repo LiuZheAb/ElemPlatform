@@ -12,6 +12,17 @@ export default class index extends Component {
         return (
             <div id="platform">
                 <Header></Header>
+                <div className="name">
+                    <img src={require("../../assets/images/platform.png")} alt=""/>
+                </div>
+                <div className="product-block">
+                    <div className="product">
+                        Elem V
+                    </div>
+                    <div className="product">
+                        Elem D
+                    </div>
+                </div>
             </div >
         )
     }

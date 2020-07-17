@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component,lazy } from 'react';
 import { Layout } from 'antd';
-import Header from "../../components/Header";
-import Sider from "../../components/Sider";
-import Content from "../../components/Content";
+
+const Header = lazy(() => import('../../components/Header'));
+const Sider = lazy(() => import('../../components/Sider'));
+const Content = lazy(() => import('../../components/Content'));
 
 export default class index extends Component {
     render() {
         return (
-            <Layout style={{ minHeight: '100vh' }}>
+            <Layout style={{ minHeight: '100vh', paddingTop: 50 }}>
                 <Header />
                 <Layout >
                     <Sider />
