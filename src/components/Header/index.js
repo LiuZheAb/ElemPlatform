@@ -56,8 +56,10 @@ class index extends Component {
         const { userName, visible, isLogin, collapsed } = this.state;
         let pathSnippets = this.props.location.pathname.split('/').filter(i => i);
         let defaultSelectedKeys = "platform";
-        if (pathSnippets.length !== 0) {
-            defaultSelectedKeys = pathSnippets[0]
+        if (pathSnippets.length !== 0 && pathSnippets[0] !== "help") {
+            defaultSelectedKeys = pathSnippets[0];
+        } else if (pathSnippets[0] === "help") {
+            defaultSelectedKeys = pathSnippets[1];
         }
         return (
             <div className="header">
@@ -65,7 +67,7 @@ class index extends Component {
                     <div className="menu-btn" onClick={this.toggleCollapsed}>
                         <IconFont type="vizego-menu"></IconFont>
                     </div>
-                    <Menu mode="vertical" inlineCollapsed={collapsed}>
+                    <Menu className={collapsed ? "ant-menu-inline-collapsed" : ""} mode="vertical" defaultSelectedKeys={defaultSelectedKeys}>
                         <Menu.Item key="platform">
                             <Link to="/platform">Elem P</Link>
                         </Menu.Item>
@@ -76,13 +78,17 @@ class index extends Component {
                             <Link to="/dataflow">Elem D</Link>
                         </Menu.Item>
                         <SubMenu title="帮助">
-                            <Menu.Item key="Elem V文档">Elem V文档</Menu.Item>
-                            <Menu.Item key="Elem D文档">Elem D文档</Menu.Item>
+                            <Menu.Item key="helpv">
+                                <Link to="/help/helpv">Elem V文档</Link>
+                            </Menu.Item>
+                            <Menu.Item key="helpd">
+                                <Link to="/help/helpd">Elem D文档</Link>
+                            </Menu.Item>
                         </SubMenu>
                     </Menu>
                 </div>
                 <div className="horizontal-menu">
-                    <img className="logo" src={require("../../assets/images/logo-row.png")} alt="" />
+                    <img src={require("../../assets/images/logo.png")} alt="" />
                     <Menu mode="horizontal" defaultSelectedKeys={defaultSelectedKeys}>
                         <Menu.Item key="platform">
                             <Link to="/platform">Elem P</Link>
@@ -94,8 +100,12 @@ class index extends Component {
                             <Link to="/dataflow">Elem D</Link>
                         </Menu.Item>
                         <SubMenu title="帮助">
-                            <Menu.Item key="Elem V文档">Elem V文档</Menu.Item>
-                            <Menu.Item key="Elem D文档">Elem D文档</Menu.Item>
+                            <Menu.Item key="helpv">
+                                <Link to="/help/helpv">Elem V文档</Link>
+                            </Menu.Item>
+                            <Menu.Item key="helpd">
+                                <Link to="/help/helpd">Elem D文档</Link>
+                            </Menu.Item>
                         </SubMenu>
                     </Menu>
                 </div>

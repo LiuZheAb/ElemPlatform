@@ -1,37 +1,323 @@
-@productHeight: 450px;
+@productHeight: 500px;
 
 #platform {
-    width: 100vw;
     height: 100vh;
     background: url("../../assets/images/background.png") no-repeat center;
     padding-top: 50px;
 
-    .name {
-        height: calc(100vh - @productHeight - 50px);
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .content {
+        margin: 0 auto;
 
-        img {
+        .name {
             width: 100%;
-            max-width: 784px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(50px);
+
+            img:nth-child(1) {
+                transform: translateY(-50px);
+            }
+
+            img:nth-child(2) {
+                width: 100%;
+                max-width: 801px;
+            }
         }
-    }
 
-    .product-block {
-        height: @productHeight;
-        width: 100%;
-        display: flex;
-
-        .product {
-            width: 50%;
+        .product-block {
             height: @productHeight;
-            text-align: center;
-            line-height: @productHeight;
-            background-color: #fff;
-            border: 1px solid #000;
-            box-sizing: border-box;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            .product {
+                width: 35%;
+                height: @productHeight;
+                line-height: @productHeight;
+                box-sizing: border-box;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                &-name {
+                    width: 210px;
+                    margin-top: 100px;
+                }
+
+                .animate-box {
+                    width: 300px;
+                    height: 300px;
+                    background: url("../../assets/images/block1.png") no-repeat center;
+                    background-size: contain;
+                    position: relative;
+
+                    img {
+                        position: absolute;
+                        animation-duration: 12s;
+                        animation-iteration-count: infinite;
+                        animation-timing-function: ease-out;
+
+                        &:nth-child(1) {
+                            left: -29px;
+                            top: 18px;
+                            animation-name: linego1;
+                        }
+
+                        &:nth-child(2) {
+                            left: 100px;
+                            top: 241px;
+                            animation-name: linego2;
+                        }
+
+                        &:nth-child(3) {
+                            left: 100px;
+                            top: -57px;
+                            animation-name: linego3;
+                        }
+
+                        @keyframes linego1 {
+                            0% {
+                                left: -29px;
+                                top: 18px;
+                            }
+
+                            16.7% {
+                                left: 100px;
+                                top: -57px;
+                            }
+
+                            33.3% {
+                                left: 229px;
+                                top: 18px;
+                            }
+
+                            50% {
+                                left: 229px;
+                                top: 166px;
+                            }
+
+                            66.7% {
+                                left: 100px;
+                                top: 241px;
+                            }
+
+                            83.3% {
+                                left: -29px;
+                                top: 166px;
+                            }
+
+                            100% {
+                                left: -29px;
+                                top: 18px;
+                            }
+                        }
+
+                        @keyframes linego2 {
+                            0% {
+                                left: 229px;
+                                top: 18px;
+                            }
+
+                            16.7% {
+                                left: 229px;
+                                top: 166px;
+                            }
+
+                            33.3% {
+                                left: 100px;
+                                top: 241px;
+                            }
+
+                            50% {
+                                left: -29px;
+                                top: 166px;
+                            }
+
+                            66.7% {
+                                left: -29px;
+                                top: 18px;
+                            }
+
+                            83.3% {
+                                left: 100px;
+                                top: -57px;
+                            }
+
+                            100% {
+                                left: 229px;
+                                top: 18px;
+                            }
+                        }
+
+                        @keyframes linego3 {
+                            0% {
+                                left: 100px;
+                                top: 241px;
+                            }
+
+                            16.7% {
+                                left: -29px;
+                                top: 166px;
+                            }
+
+                            33.3% {
+                                left: -29px;
+                                top: 18px;
+                            }
+
+                            50% {
+                                left: 100px;
+                                top: -57px;
+                            }
+
+                            66.7% {
+                                left: 229px;
+                                top: 18px;
+                            }
+
+                            83.3% {
+                                left: 229px;
+                                top: 166px;
+                            }
+
+                            100% {
+                                left: 100px;
+                                top: 241px;
+                            }
+                        }
+                    }
+                }
+
+                .animate-box2 {
+                    width: 300px;
+                    height: 300px;
+                    background: url("../../pages/ElemDataFlow/assets/images/block.png") no-repeat center;
+                    background-size: contain;
+                    position: relative;
+
+                    div.animate-block {
+                        width: 101px;
+                        height: 116px;
+                        position: absolute;
+                        animation-duration: 3s;
+                        animation-iteration-count: infinite;
+                        animation-timing-function: ease;
+
+                        &:nth-child(1) {
+                            background-image: url("../../pages/ElemDataFlow/assets/images/block4.png");
+                            left: -29px;
+                            top: 18px;
+                        }
+
+                        &:nth-child(2) {
+                            width: 101px;
+                            height: 116px;
+                            background-image: url("../../pages/ElemDataFlow/assets/images/block4.png");
+                            background-size: contain;
+                            left: -29px;
+                            top: 18px;
+                            animation-name: data_linego2;
+                        }
+
+                        &:nth-child(3) {
+                            background-image: url("../../pages/ElemDataFlow/assets/images/block1.png");
+                            background-size: contain;
+                            left: 100px;
+                            top: 241px;
+                            animation-name: data_linego3;
+                            opacity: 0;
+                        }
+
+                        &:nth-child(4) {
+                            background-image: url("../../pages/ElemDataFlow/assets/images/block1.png");
+                            background-size: contain;
+                            left: 229px;
+                            top: 18px;
+                            animation-name: data_linego4;
+                            opacity: 0;
+                        }
+
+                        @keyframes data_linego2 {
+                            0% {
+                                left: -29px;
+                                top: 18px;
+                            }
+
+                            50% {
+                                left: 100px;
+                                top: 92px;
+                                background-image: url("../../pages/ElemDataFlow/assets/images/block1.png");
+                            }
+
+                            100% {
+                                left: 100px;
+                                top: 92px;
+                                background-image: url("../../pages/ElemDataFlow/assets/images/block1.png");
+                            }
+                        }
+
+                        @keyframes data_linego3 {
+                            0% {
+                                left: 100px;
+                                top: 92px;
+                                opacity: 0;
+                            }
+
+                            49.9% {
+                                left: 100px;
+                                top: 92px;
+                                opacity: 0;
+                            }
+
+                            50% {
+                                left: 100px;
+                                top: 92px;
+                                opacity: 1;
+                                background-image: url("../../pages/ElemDataFlow/assets/images/block1.png");
+                            }
+
+                            100% {
+                                left: 100px;
+                                top: 241px;
+                                background-image: url("../../pages/ElemDataFlow/assets/images/block3.png");
+                                opacity: 1;
+                            }
+                        }
+
+                        @keyframes data_linego4 {
+                            0% {
+                                left: 100px;
+                                top: 92px;
+                                opacity: 0;
+                            }
+
+                            49.9% {
+                                left: 100px;
+                                top: 92px;
+                                opacity: 0;
+                            }
+
+                            50% {
+                                left: 100px;
+                                top: 92px;
+                                display: block;
+                                opacity: 1;
+                                background-image: url("../../pages/ElemDataFlow/assets/images/block1.png");
+                            }
+
+                            100% {
+                                left: 229px;
+                                top: 18px;
+                                background-image: url("../../pages/ElemDataFlow/assets/images/block2.png");
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

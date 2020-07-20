@@ -1,11 +1,11 @@
-.banner {
+#elemviz .banner {
     width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: url("../../assets/images/background.png") no-repeat center;
+    background: url("../../../../assets/images/background.png") no-repeat center;
 
     .name {
         position: absolute;
@@ -158,128 +158,68 @@
         }
     }
 
-    .btn {
-        transform: translateY(120px);
-        position: relative;
-        padding: 1rem 3rem;
-        font-size: 1rem;
-        line-height: 1.5;
-        color: white;
-        text-decoration: none;
-        text-transform: uppercase;
-        background-color: #20d5c6;
-        border: 2px solid #20d5c6;
-        outline: transparent;
+    .btn-block {
         overflow: hidden;
-        cursor: pointer;
-        user-select: none;
-        white-space: nowrap;
-        transition: 0.3s;
+        transform: translateY(270px);
+        position: absolute;
 
-        &:hover {
-            background: #20d5c6;
-        }
-
-        &-ghost {
-            color: #20d5c6;
-            background-color: transparent;
-            border-color: #20d5c6;
-
-            &:hover {
-                color: white;
-            }
-        }
-
-        &-shine {
+        .btn {
+            padding: 1rem 3rem;
+            font-size: 1rem;
+            line-height: 1.5;
             color: white;
-
-            &::before {
-                position: absolute;
-                content: "";
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(120deg,
-                        transparent,
-                        #20d5c6,
-                        transparent);
-                transform: translateX(-100%);
-                transition: 0.6s;
-            }
+            text-decoration: none;
+            text-transform: uppercase;
+            background-color: #20d5c6;
+            border: 2px solid #20d5c6;
+            outline: transparent;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+            transition: 0.3s;
 
             &:hover {
-                background: transparent;
-                box-shadow: 0 0 20px 10px #20d5c6;
+                background: #20d5c6;
             }
 
-            &:hover::before {
-                transform: translateX(100%);
-            }
-        }
-    }
-}
+            &-ghost {
+                color: #20d5c6;
+                background-color: transparent;
+                border-color: #20d5c6;
 
-.guide-content {
-    width: 100%;
-    min-height: 100vh;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 24px;
-    position: relative;
-
-    .show {
-        text-align: center;
-        font-size: 32px;
-        font-weight: 600;
-        margin-bottom: 24px;
-    }
-
-    .ant-list-item {
-        height: 220px;
-        padding: 16px 8px;
-
-        .box {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            border-radius: 4px;
-            background-color: #fff;
-            font-family: 'Merriweather Sans', sans-serif;
-            overflow: hidden;
-            position: relative;
-            transition: all .3s;
-
-            img {
-                width: 100%;
-                transition: transform 0.3s;
+                &:hover {
+                    color: white;
+                }
             }
 
-            .box-content {
-                width: 100%;
-                height: 30px;
-                position: absolute;
-                padding-left: 20px;
-                bottom: -30px;
-                transition: all .3s;
-                background: rgba(0, 0, 0, 0.4);
-                color: #fff;
-                font-size: 18px;
-                line-height: 30px;
-            }
-        }
+            &-shine {
+                color: white;
 
-        &:hover .box {
-            box-shadow: 3px 3px 5px #999;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(120deg,
+                            transparent,
+                            #20d5c6,
+                            transparent);
+                    transform: translateX(-100%);
+                    transition: 0.6s;
+                }
 
-            img {
-                transform: scale(1.1);
-            }
+                &:hover {
+                    background: transparent;
+                    box-shadow: 0 0 20px 10px #20d5c6;
+                }
 
-            .box-content {
-                bottom: 0;
+                &:hover::before {
+                    transform: translateX(100%);
+                }
             }
         }
     }
+
 }

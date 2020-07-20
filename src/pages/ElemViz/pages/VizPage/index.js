@@ -72,7 +72,7 @@ export default class index extends Component {
                 <Header className="viz-header" id="viz-header">
                     <div style={{ display: "flex", alignItems: "center" }}>
                         <div className="logo" onClick={this.showDrawer}>
-                            <img src={require("../../../../assets/images/logo-row.png")} alt="" />
+                            <img src={require("../../../../assets/images/logo.png")} alt="" />
                         </div>
                         <span style={{ color: "#fff", marginRight: "10px" }}>是否显示数据可视化</span>
                         <Switch defaultChecked onChange={this.handleChange} />
@@ -92,7 +92,7 @@ export default class index extends Component {
                             </li>
                             <li onClick={this.changeBody.bind(this, "0")}>新建</li>
                             <li onClick={this.changeBody.bind(this, "1")}>打开</li>
-                            <li ><Link to="/home" style={{ color: "#fff" }}>返回首页</Link></li>
+                            <li ><Link to="/viz/vizlist" style={{ color: "#fff" }}>返回首页</Link></li>
                         </ul>
                         <div className="drawer-right">
                             <div className="title">{title}</div>

@@ -6,6 +6,7 @@ import update from 'immutability-helper';
 import GridLayout from 'react-grid-layout';
 import { DndProvider } from 'react-dnd';
 import Backend from 'react-dnd-html5-backend';
+import { Link } from "react-router-dom";
 import "./index.less";
 
 const Container = () => {
@@ -83,39 +84,40 @@ const Container = () => {
         },
         [droppedItem, targets],
     )
-    const saveHtml = () => {
-        let html = ""
-        if (document.getElementsByClassName("target")[0]) {
-            html = document.getElementsByClassName("target")[0].innerHTML
-        }
-        var elementA = document.createElement('a');
-        elementA.download = +new Date() + ".txt";//文件名
-        //隐藏dom点不显示
-        elementA.style.display = 'none';
-        var blob = new Blob([html]);//二进制
-        elementA.href = URL.createObjectURL(blob);
-        document.body.appendChild(elementA);
-        elementA.click();
-        document.body.removeChild(elementA);
-    }
-    const importHtml = (e) => {
-        if (e.target.value) {
-            //读取json
-            let file = document.getElementById('file').files[0];
-            const reader = new FileReader();
-            //外层作用域的重新定义
-            reader.readAsText(file);
-            reader.onload = function () {
-                document.getElementsByClassName("target")[0].innerHTML = reader.result;
-            };
-        };
-    }
+    // const saveHtml = () => {
+    //     let html = ""
+    //     if (document.getElementsByClassName("target")[0]) {
+    //         html = document.getElementsByClassName("target")[0].innerHTML
+    //     }
+    //     var elementA = document.createElement('a');
+    //     elementA.download = +new Date() + ".txt";//文件名
+    //     //隐藏dom点不显示
+    //     elementA.style.display = 'none';
+    //     var blob = new Blob([html]);//二进制
+    //     elementA.href = URL.createObjectURL(blob);
+    //     document.body.appendChild(elementA);
+    //     elementA.click();
+    //     document.body.removeChild(elementA);
+    // }
+    // const importHtml = (e) => {
+    //     if (e.target.value) {
+    //         //读取json
+    //         let file = document.getElementById('file').files[0];
+    //         const reader = new FileReader();
+    //         //外层作用域的重新定义
+    //         reader.readAsText(file);
+    //         reader.onload = function () {
+    //             document.getElementsByClassName("target")[0].innerHTML = reader.result;
+    //         };
+    //     };
+    // }
     return (
         <DndProvider backend={Backend}>
             <div className="container">
                 <div className="source">
-                    <button onClick={saveHtml}>save</button>
-                    <input id="file" type="file" accept=".txt" onChange={importHtml} />
+                    {/* <button onClick={saveHtml}>save</button>
+                    <input id="file" type="file" accept=".txt" onChange={importHtml} /> */}
+                    <Link to="/viz/vizlist"><div className="back-btn">返 回</div></Link>
                     {items ? items.map(({ name, type }, index) => (
                         <Item
                             name={name}
@@ -126,7 +128,7 @@ const Container = () => {
                     )) : null}
                 </div>
                 <div className="target">
-                    <GridLayout className="target" cols={Number(columnNum * 2)} rowHeight={(targetHeight / 2)} width={size.clientWidth - 240} margin={[0, 0]}>
+                    <GridLayout cols={Number(columnNum * 2)} rowHeight={(targetHeight / 2)} width={size.clientWidth - 240} margin={[0, 0]}>
                         {targets.map(({ accepts, lastDroppedItem }, index) => (
                             <div key={index} data-grid={{ x: index % columnNum * 2, y: parseInt(index / columnNum * 2), w: 2, h: 2 }}>
                                 <Target
