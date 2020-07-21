@@ -44,7 +44,7 @@
 
                 img {
                     position: absolute;
-                    animation: 12s infinite ease-out paused;
+                    animation: 9s infinite ease-out paused;
 
                     &:nth-child(1) {
                         left: -50px;
@@ -194,35 +194,50 @@
                     &:nth-child(1) {
                         left: -50px;
                         top: 10px;
-                        background-image: url("@{imgUrl}/block4.png");
+                        background-image: url("@{imgUrl}/block2.png");
                     }
 
                     &:nth-child(2) {
                         left: 64px;
                         top: 75px;
                         background-image: url("@{imgUrl}/block5.png");
-                        animation-name: plat_linego2;
                     }
 
                     &:nth-child(3) {
                         left: 64px;
                         top: 207px;
-                        background-image: url("@{imgUrl}/block3.png");
-                        animation-name: plat_linego3;
+                        background-image: url("@{imgUrl}/block4.png");
                     }
 
                     &:nth-child(4) {
                         left: 179px;
                         top: 9px;
-                        background-image: url("@{imgUrl}/block2.png");
-                        animation-name: plat_linego4;
+                        background-image: url("@{imgUrl}/block3.png");
+                    }
+
+                    @keyframes plat_linego1 {
+                        0% {
+                            opacity: 0;
+                        }
+
+                        33.3% {
+                            opacity: 1;
+                        }
+
+                        80% {
+                            opacity: 1;
+                        }
+
+                        100% {
+                            opacity: 0;
+                        }
                     }
 
                     @keyframes plat_linego2 {
                         0% {
                             left: -50px;
                             top: 10px;
-                            background-image: url("@{imgUrl}/block4.png");
+                            background-image: url("@{imgUrl}/block2.png");
                             opacity: 0;
                         }
 
@@ -233,10 +248,15 @@
                             opacity: 1;
                         }
 
+                        80% {
+                            opacity: 1;
+                        }
+
                         100% {
                             left: 64px;
                             top: 75px;
                             background-image: url("@{imgUrl}/block5.png");
+                            opacity: 0;
                         }
                     }
 
@@ -260,13 +280,17 @@
                             left: 64px;
                             top: 207px;
                             opacity: 1;
-                            background-image: url("@{imgUrl}/block3.png");
+                            background-image: url("@{imgUrl}/block4.png");
+                        }
+
+                        80% {
+                            opacity: 1;
                         }
 
                         100% {
                             left: 64px;
                             top: 207px;
-                            opacity: 1;
+                            opacity: 0;
                         }
                     }
 
@@ -290,13 +314,17 @@
                             left: 179px;
                             top: 9px;
                             opacity: 1;
-                            background-image: url("@{imgUrl}/block2.png");
+                            background-image: url("@{imgUrl}/block3.png");
+                        }
+
+                        80% {
+                            opacity: 1;
                         }
 
                         100% {
                             left: 179px;
                             top: 9px;
-                            opacity: 1;
+                            opacity: 0;
                         }
                     }
                 }
@@ -325,6 +353,18 @@
 
                 .animate-box2 .animate-block {
                     animation-play-state: running;
+                    &:nth-child(1) {
+                        animation-name: plat_linego1;
+                    }
+                    &:nth-child(2) {
+                        animation-name: plat_linego2;
+                    }
+                    &:nth-child(3) {
+                        animation-name: plat_linego3;
+                    }
+                    &:nth-child(4) {
+                        animation-name: plat_linego4;
+                    }
                 }
 
                 .elemv-name {

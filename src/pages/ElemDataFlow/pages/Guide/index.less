@@ -30,37 +30,56 @@
             animation: 4.5s infinite ease;
 
             &:nth-child(1) {
-                background-image: url("@{imgUrl}/block4.png");
                 left: -50px;
                 top: 10px;
+                background-image: url("@{imgUrl}/block2.png");
+                animation-name: data_linego1;
             }
 
             &:nth-child(2) {
-                background-image: url("@{imgUrl}/block5.png");
                 left: 64px;
                 top: 75px;
-                animation-name: plat_linego2;
+                background-image: url("@{imgUrl}/block5.png");
+                animation-name: data_linego2;
             }
 
             &:nth-child(3) {
-                background-image: url("@{imgUrl}/block3.png");
                 left: 64px;
                 top: 207px;
-                animation-name: plat_linego3;
+                background-image: url("@{imgUrl}/block4.png");
+                animation-name: data_linego3;
             }
 
             &:nth-child(4) {
-                background-image: url("@{imgUrl}/block2.png");
                 left: 179px;
                 top: 9px;
-                animation-name: plat_linego4;
+                background-image: url("@{imgUrl}/block3.png");
+                animation-name: data_linego4;
             }
 
-            @keyframes plat_linego2 {
+            @keyframes data_linego1 {
+                0% {
+                    opacity: 0;
+                }
+
+                33.3% {
+                    opacity: 1;
+                }
+
+                80% {
+                    opacity: 1;
+                }
+
+                100% {
+                    opacity: 0;
+                }
+            }
+
+            @keyframes data_linego2 {
                 0% {
                     left: -50px;
                     top: 10px;
-                    background-image: url("@{imgUrl}/block4.png");
+                    background-image: url("@{imgUrl}/block2.png");
                     opacity: 0;
                 }
 
@@ -71,14 +90,19 @@
                     opacity: 1;
                 }
 
+                80% {
+                    opacity: 1;
+                }
+
                 100% {
                     left: 64px;
                     top: 75px;
                     background-image: url("@{imgUrl}/block5.png");
+                    opacity: 0;
                 }
             }
 
-            @keyframes plat_linego3 {
+            @keyframes data_linego3 {
                 0% {
                     opacity: 0;
                 }
@@ -97,44 +121,52 @@
                 66.6% {
                     left: 64px;
                     top: 207px;
+                    opacity: 1;
+                    background-image: url("@{imgUrl}/block4.png");
+                }
+
+                80% {
+                    opacity: 1;
+                }
+
+                100% {
+                    left: 64px;
+                    top: 207px;
+                    opacity: 0;
+                }
+            }
+
+            @keyframes data_linego4 {
+                0% {
+                    opacity: 0;
+                }
+
+                33.3% {
+                    left: 64px;
+                    top: 75px;
+                    opacity: 0;
+                    background-image: url("@{imgUrl}/block5.png");
+                }
+
+                40% {
+                    opacity: 0.2;
+                }
+
+                66.6% {
+                    left: 179px;
+                    top: 9px;
                     opacity: 1;
                     background-image: url("@{imgUrl}/block3.png");
                 }
 
-                100% {
-                    left: 64px;
-                    top: 207px;
+                80% {
                     opacity: 1;
-                }
-            }
-
-            @keyframes plat_linego4 {
-                0% {
-                    opacity: 0;
-                }
-
-                33.3% {
-                    left: 64px;
-                    top: 75px;
-                    opacity: 0;
-                    background-image: url("@{imgUrl}/block5.png");
-                }
-
-                40% {
-                    opacity: 0.2;
-                }
-
-                66.6% {
-                    left: 179px;
-                    top: 9px;
-                    opacity: 1;
-                    background-image: url("@{imgUrl}/block2.png");
                 }
 
                 100% {
                     left: 179px;
                     top: 9px;
-                    opacity: 1;
+                    opacity: 0;
                 }
             }
         }
