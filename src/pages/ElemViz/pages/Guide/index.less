@@ -1,3 +1,5 @@
+@imgUrl: "../../../../assets/images";
+
 #elemviz .banner {
     width: 100%;
     height: 100vh;
@@ -5,7 +7,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: url("../../../../assets/images/background.png") no-repeat center;
+    background: url("@{imgUrl}/background.png") no-repeat center;
 
     .name {
         position: absolute;
@@ -15,9 +17,9 @@
     }
 
     .animate-box {
-        width: 300px;
-        height: 300px;
-        background: url("../../assets/images/block1.png") no-repeat center;
+        width: 231px;
+        height: 266px;
+        background: url("@{imgUrl}/block1.png") no-repeat center;
         background-size: contain;
         position: relative;
 
@@ -28,131 +30,131 @@
             animation-timing-function: ease-out;
 
             &:nth-child(1) {
-                left: -29px;
-                top: 18px;
+                left: -50px;
+                top: 10px;
                 animation-name: linego1;
             }
 
             &:nth-child(2) {
-                left: 100px;
-                top: 241px;
+                left: 179px;
+                top: 10px;
                 animation-name: linego2;
             }
 
             &:nth-child(3) {
-                left: 100px;
-                top: -57px;
+                left: 65px;
+                top: 207px;
                 animation-name: linego3;
             }
 
             @keyframes linego1 {
                 0% {
-                    left: -29px;
-                    top: 18px;
+                    left: -50px;
+                    top: 10px;
                 }
 
                 16.7% {
-                    left: 100px;
-                    top: -57px;
+                    left: 65px;
+                    top: -56px;
                 }
 
                 33.3% {
-                    left: 229px;
-                    top: 18px;
+                    left: 179px;
+                    top: 10px;
                 }
 
                 50% {
-                    left: 229px;
-                    top: 166px;
+                    left: 179px;
+                    top: 142px;
                 }
 
                 66.7% {
-                    left: 100px;
-                    top: 241px;
+                    left: 65px;
+                    top: 207px;
                 }
 
                 83.3% {
-                    left: -29px;
-                    top: 166px;
+                    left: -50px;
+                    top: 141px;
                 }
 
                 100% {
-                    left: -29px;
-                    top: 18px;
+                    left: -50px;
+                    top: 10px;
                 }
             }
 
             @keyframes linego2 {
                 0% {
-                    left: 229px;
-                    top: 18px;
+                    left: 179px;
+                    top: 10px;
                 }
 
                 16.7% {
-                    left: 229px;
-                    top: 166px;
+                    left: 179px;
+                    top: 142px;
                 }
 
                 33.3% {
-                    left: 100px;
-                    top: 241px;
+                    left: 65px;
+                    top: 207px;
                 }
 
                 50% {
-                    left: -29px;
-                    top: 166px;
+                    left: -50px;
+                    top: 141px;
                 }
 
                 66.7% {
-                    left: -29px;
-                    top: 18px;
+                    left: -50px;
+                    top: 10px;
                 }
 
                 83.3% {
-                    left: 100px;
-                    top: -57px;
+                    left: 65px;
+                    top: -56px;
                 }
 
                 100% {
-                    left: 229px;
-                    top: 18px;
+                    left: 179px;
+                    top: 10px;
                 }
             }
 
             @keyframes linego3 {
                 0% {
-                    left: 100px;
-                    top: 241px;
+                    left: 65px;
+                    top: 207px;
                 }
 
                 16.7% {
-                    left: -29px;
-                    top: 166px;
+                    left: -50px;
+                    top: 141px;
                 }
 
                 33.3% {
-                    left: -29px;
-                    top: 18px;
+                    left: -50px;
+                    top: 10px;
                 }
 
                 50% {
-                    left: 100px;
-                    top: -57px;
+                    left: 65px;
+                    top: -56px;
                 }
 
                 66.7% {
-                    left: 229px;
-                    top: 18px;
+                    left: 179px;
+                    top: 10px;
                 }
 
                 83.3% {
-                    left: 229px;
-                    top: 166px;
+                    left: 179px;
+                    top: 142px;
                 }
 
                 100% {
-                    left: 100px;
-                    top: 241px;
+                    left: 65px;
+                    top: 207px;
                 }
             }
         }

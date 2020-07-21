@@ -1,321 +1,344 @@
-@productHeight: 500px;
+@imgUrl: "../../assets/images";
 
 #platform {
     height: 100vh;
-    background: url("../../assets/images/background.png") no-repeat center;
+    background: url("@{imgUrl}/background.png") no-repeat center;
     padding-top: 50px;
 
-    .content {
-        margin: 0 auto;
+    .name {
+        padding: 40px 0 0;
 
-        .name {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transform: translateY(50px);
-
-            img:nth-child(1) {
-                transform: translateY(-50px);
-            }
-
-            img:nth-child(2) {
-                width: 100%;
-                max-width: 801px;
-            }
+        img {
+            display: block;
+            margin: 0 auto;
         }
 
-        .product-block {
-            height: @productHeight;
+        img:nth-child(2) {
+            margin-top: 40px;
             width: 100%;
-            display: flex;
-            justify-content: center;
+            max-width: 801px;
+        }
+    }
 
-            .product {
-                width: 35%;
-                height: @productHeight;
-                line-height: @productHeight;
-                box-sizing: border-box;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
+    .product-block {
+        width: 100%;
+        max-width: 960px;
+        margin: 0 auto;
+        padding-top: 100px;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
 
-                &-name {
-                    width: 210px;
-                    margin-top: 100px;
-                }
+        .product {
+            width: 400px;
+            text-align: center;
+            cursor: pointer;
 
-                .animate-box {
-                    width: 300px;
-                    height: 300px;
-                    background: url("../../assets/images/block1.png") no-repeat center;
-                    background-size: contain;
-                    position: relative;
+            .animate-box {
+                width: 231px;
+                height: 266px;
+                margin: 0 auto;
+                background: url("@{imgUrl}/block1.png") no-repeat center;
+                background-size: contain;
+                position: relative;
 
-                    img {
-                        position: absolute;
-                        animation-duration: 12s;
-                        animation-iteration-count: infinite;
-                        animation-timing-function: ease-out;
+                img {
+                    position: absolute;
+                    animation-duration: 12s;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: ease-out;
+                    animation-play-state: paused;
 
-                        &:nth-child(1) {
-                            left: -29px;
-                            top: 18px;
-                            animation-name: linego1;
+                    &:nth-child(1) {
+                        left: -50px;
+                        top: 10px;
+                        animation-name: linego1;
+                    }
+
+                    &:nth-child(2) {
+                        left: 179px;
+                        top: 10px;
+                        animation-name: linego2;
+                    }
+
+                    &:nth-child(3) {
+                        left: 65px;
+                        top: 207px;
+                        animation-name: linego3;
+                    }
+
+                    @keyframes linego1 {
+                        0% {
+                            left: -50px;
+                            top: 10px;
                         }
 
-                        &:nth-child(2) {
-                            left: 100px;
-                            top: 241px;
-                            animation-name: linego2;
+                        16.7% {
+                            left: 65px;
+                            top: -56px;
                         }
 
-                        &:nth-child(3) {
-                            left: 100px;
-                            top: -57px;
-                            animation-name: linego3;
+                        33.3% {
+                            left: 179px;
+                            top: 10px;
                         }
 
-                        @keyframes linego1 {
-                            0% {
-                                left: -29px;
-                                top: 18px;
-                            }
-
-                            16.7% {
-                                left: 100px;
-                                top: -57px;
-                            }
-
-                            33.3% {
-                                left: 229px;
-                                top: 18px;
-                            }
-
-                            50% {
-                                left: 229px;
-                                top: 166px;
-                            }
-
-                            66.7% {
-                                left: 100px;
-                                top: 241px;
-                            }
-
-                            83.3% {
-                                left: -29px;
-                                top: 166px;
-                            }
-
-                            100% {
-                                left: -29px;
-                                top: 18px;
-                            }
+                        50% {
+                            left: 179px;
+                            top: 142px;
                         }
 
-                        @keyframes linego2 {
-                            0% {
-                                left: 229px;
-                                top: 18px;
-                            }
-
-                            16.7% {
-                                left: 229px;
-                                top: 166px;
-                            }
-
-                            33.3% {
-                                left: 100px;
-                                top: 241px;
-                            }
-
-                            50% {
-                                left: -29px;
-                                top: 166px;
-                            }
-
-                            66.7% {
-                                left: -29px;
-                                top: 18px;
-                            }
-
-                            83.3% {
-                                left: 100px;
-                                top: -57px;
-                            }
-
-                            100% {
-                                left: 229px;
-                                top: 18px;
-                            }
+                        66.7% {
+                            left: 65px;
+                            top: 207px;
                         }
 
-                        @keyframes linego3 {
-                            0% {
-                                left: 100px;
-                                top: 241px;
-                            }
+                        83.3% {
+                            left: -50px;
+                            top: 141px;
+                        }
 
-                            16.7% {
-                                left: -29px;
-                                top: 166px;
-                            }
+                        100% {
+                            left: -50px;
+                            top: 10px;
+                        }
+                    }
 
-                            33.3% {
-                                left: -29px;
-                                top: 18px;
-                            }
+                    @keyframes linego2 {
+                        0% {
+                            left: 179px;
+                            top: 10px;
+                        }
 
-                            50% {
-                                left: 100px;
-                                top: -57px;
-                            }
+                        16.7% {
+                            left: 179px;
+                            top: 142px;
+                        }
 
-                            66.7% {
-                                left: 229px;
-                                top: 18px;
-                            }
+                        33.3% {
+                            left: 65px;
+                            top: 207px;
+                        }
 
-                            83.3% {
-                                left: 229px;
-                                top: 166px;
-                            }
+                        50% {
+                            left: -50px;
+                            top: 141px;
+                        }
 
-                            100% {
-                                left: 100px;
-                                top: 241px;
-                            }
+                        66.7% {
+                            left: -50px;
+                            top: 10px;
+                        }
+
+                        83.3% {
+                            left: 65px;
+                            top: -56px;
+                        }
+
+                        100% {
+                            left: 179px;
+                            top: 10px;
+                        }
+                    }
+
+                    @keyframes linego3 {
+                        0% {
+                            left: 65px;
+                            top: 207px;
+                        }
+
+                        16.7% {
+                            left: -50px;
+                            top: 141px;
+                        }
+
+                        33.3% {
+                            left: -50px;
+                            top: 10px;
+                        }
+
+                        50% {
+                            left: 65px;
+                            top: -56px;
+                        }
+
+                        66.7% {
+                            left: 179px;
+                            top: 10px;
+                        }
+
+                        83.3% {
+                            left: 179px;
+                            top: 142px;
+                        }
+
+                        100% {
+                            left: 65px;
+                            top: 207px;
                         }
                     }
                 }
+            }
 
-                .animate-box2 {
-                    width: 300px;
-                    height: 300px;
-                    background: url("../../pages/ElemDataFlow/assets/images/block.png") no-repeat center;
-                    background-size: contain;
-                    position: relative;
+            .animate-box2 {
+                width: 231px;
+                height: 266px;
+                margin: 0 auto;
+                background: url("@{imgUrl}/block.png") no-repeat center;
+                background-size: contain;
+                position: relative;
 
-                    div.animate-block {
-                        width: 101px;
-                        height: 116px;
-                        position: absolute;
-                        animation-duration: 3s;
-                        animation-iteration-count: infinite;
-                        animation-timing-function: ease;
+                .animate-block {
+                    width: 101px;
+                    height: 116px;
+                    position: absolute;
+                    animation-duration: 4.5s;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: ease;
+                    animation-play-state: paused;
 
-                        &:nth-child(1) {
-                            background-image: url("../../pages/ElemDataFlow/assets/images/block4.png");
-                            left: -29px;
-                            top: 18px;
-                        }
+                    &:nth-child(1) {
+                        left: -50px;
+                        top: 10px;
+                        background-image: url("@{imgUrl}/block4.png");
+                    }
 
-                        &:nth-child(2) {
-                            width: 101px;
-                            height: 116px;
-                            background-image: url("../../pages/ElemDataFlow/assets/images/block4.png");
-                            background-size: contain;
-                            left: -29px;
-                            top: 18px;
-                            animation-name: data_linego2;
-                        }
+                    &:nth-child(2) {
+                        left: 64px;
+                        top: 75px;
+                        background-image: url("@{imgUrl}/block5.png");
+                        animation-name: plat_linego2;
+                    }
 
-                        &:nth-child(3) {
-                            background-image: url("../../pages/ElemDataFlow/assets/images/block1.png");
-                            background-size: contain;
-                            left: 100px;
-                            top: 241px;
-                            animation-name: data_linego3;
+                    &:nth-child(3) {
+                        left: 64px;
+                        top: 207px;
+                        background-image: url("@{imgUrl}/block3.png");
+                        animation-name: plat_linego3;
+                    }
+
+                    &:nth-child(4) {
+                        left: 179px;
+                        top: 9px;
+                        background-image: url("@{imgUrl}/block2.png");
+                        animation-name: plat_linego4;
+                    }
+
+                    @keyframes plat_linego2 {
+                        0% {
+                            left: -50px;
+                            top: 10px;
+                            background-image: url("@{imgUrl}/block4.png");
                             opacity: 0;
                         }
 
-                        &:nth-child(4) {
-                            background-image: url("../../pages/ElemDataFlow/assets/images/block1.png");
-                            background-size: contain;
-                            left: 229px;
-                            top: 18px;
-                            animation-name: data_linego4;
-                            opacity: 0;
+                        33.3% {
+                            left: 64px;
+                            top: 75px;
+                            background-image: url("@{imgUrl}/block5.png");
+                            opacity: 1;
                         }
 
-                        @keyframes data_linego2 {
-                            0% {
-                                left: -29px;
-                                top: 18px;
-                            }
-
-                            50% {
-                                left: 100px;
-                                top: 92px;
-                                background-image: url("../../pages/ElemDataFlow/assets/images/block1.png");
-                            }
-
-                            100% {
-                                left: 100px;
-                                top: 92px;
-                                background-image: url("../../pages/ElemDataFlow/assets/images/block1.png");
-                            }
-                        }
-
-                        @keyframes data_linego3 {
-                            0% {
-                                left: 100px;
-                                top: 92px;
-                                opacity: 0;
-                            }
-
-                            49.9% {
-                                left: 100px;
-                                top: 92px;
-                                opacity: 0;
-                            }
-
-                            50% {
-                                left: 100px;
-                                top: 92px;
-                                opacity: 1;
-                                background-image: url("../../pages/ElemDataFlow/assets/images/block1.png");
-                            }
-
-                            100% {
-                                left: 100px;
-                                top: 241px;
-                                background-image: url("../../pages/ElemDataFlow/assets/images/block3.png");
-                                opacity: 1;
-                            }
-                        }
-
-                        @keyframes data_linego4 {
-                            0% {
-                                left: 100px;
-                                top: 92px;
-                                opacity: 0;
-                            }
-
-                            49.9% {
-                                left: 100px;
-                                top: 92px;
-                                opacity: 0;
-                            }
-
-                            50% {
-                                left: 100px;
-                                top: 92px;
-                                display: block;
-                                opacity: 1;
-                                background-image: url("../../pages/ElemDataFlow/assets/images/block1.png");
-                            }
-
-                            100% {
-                                left: 229px;
-                                top: 18px;
-                                background-image: url("../../pages/ElemDataFlow/assets/images/block2.png");
-                                opacity: 1;
-                            }
+                        100% {
+                            left: 64px;
+                            top: 75px;
+                            background-image: url("@{imgUrl}/block5.png");
                         }
                     }
+
+                    @keyframes plat_linego3 {
+                        0% {
+                            opacity: 0;
+                        }
+
+                        33.3% {
+                            left: 64px;
+                            top: 75px;
+                            opacity: 0;
+                            background-image: url("@{imgUrl}/block5.png");
+                        }
+
+                        40% {
+                            opacity: 0.2;
+                        }
+
+                        66.6% {
+                            left: 64px;
+                            top: 207px;
+                            opacity: 1;
+                            background-image: url("@{imgUrl}/block3.png");
+                        }
+
+                        100% {
+                            left: 64px;
+                            top: 207px;
+                            opacity: 1;
+                        }
+                    }
+
+                    @keyframes plat_linego4 {
+                        0% {
+                            opacity: 0;
+                        }
+
+                        33.3% {
+                            left: 64px;
+                            top: 75px;
+                            opacity: 0;
+                            background-image: url("@{imgUrl}/block5.png");
+                        }
+
+                        40% {
+                            opacity: 0.2;
+                        }
+
+                        66.6% {
+                            left: 179px;
+                            top: 9px;
+                            opacity: 1;
+                            background-image: url("@{imgUrl}/block2.png");
+                        }
+
+                        100% {
+                            left: 179px;
+                            top: 9px;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            &-name {
+                height: 64px;
+                margin-top: 100px;
+                transition: background-image 1s;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            .elemv-name {
+                background-image: url("@{imgUrl}/elemv.png");
+            }
+
+            .elemd-name {
+                background-image: url("@{imgUrl}/elemd.png");
+            }
+
+            &:hover {
+                .animate-box img {
+                    animation-play-state: running;
+                }
+
+                .animate-box2 .animate-block {
+                    animation-play-state: running;
+                }
+
+                .elemv-name {
+                    background-image: url("@{imgUrl}/elemvbtn.png");
+                }
+
+                .elemd-name {
+                    background-image: url("@{imgUrl}/elemdbtn.png");
                 }
             }
         }

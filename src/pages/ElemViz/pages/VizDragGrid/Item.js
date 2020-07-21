@@ -10,7 +10,7 @@ const Item = ({ name, type, isDropped }) => {
   })
   return (
     <div className="source-item" ref={drag} style={{ opacity }}>
-      <img src={require("../../assets/images/" + name + ".png")} alt="" className="source-img" />
+      <img src={require("../../assets/images/" + name + ".png")} alt="item" className="source-img" />
       {name}
     </div>
   )

@@ -77,7 +77,7 @@ class index extends Component {
                         <Menu.Item key="dataflow">
                             <Link to="/dataflow">Elem D</Link>
                         </Menu.Item>
-                        <SubMenu title="帮助">
+                        <SubMenu title="帮 助">
                             <Menu.Item key="helpv">
                                 <Link to="/help/helpv">Elem V文档</Link>
                             </Menu.Item>
@@ -88,7 +88,7 @@ class index extends Component {
                     </Menu>
                 </div>
                 <div className="horizontal-menu">
-                    <img src={require("../../assets/images/logo.png")} alt="" />
+                    <Link to="/platform"><img src={require("../../assets/images/logo.png")} alt="logo" /></Link>
                     <Menu mode="horizontal" defaultSelectedKeys={defaultSelectedKeys}>
                         <Menu.Item key="platform">
                             <Link to="/platform">Elem P</Link>
@@ -99,7 +99,7 @@ class index extends Component {
                         <Menu.Item key="dataflow">
                             <Link to="/dataflow">Elem D</Link>
                         </Menu.Item>
-                        <SubMenu title="帮助">
+                        <SubMenu title="帮 助">
                             <Menu.Item key="helpv">
                                 <Link to="/help/helpv">Elem V文档</Link>
                             </Menu.Item>
@@ -110,7 +110,7 @@ class index extends Component {
                     </Menu>
                 </div>
                 <div className="login-btn">
-                    {userName ? userName : <span onClick={this.showModal}>登录</span>}
+                    {userName ? userName : <span onClick={this.showModal}>登 录</span>}
                 </div>
                 <Modal visible={visible} onCancel={this.showModal} centered={true} footer={null}
                     style={{ width: 433, maxWidth: 433 }}

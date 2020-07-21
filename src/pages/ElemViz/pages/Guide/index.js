@@ -10,11 +10,11 @@ export default class index extends Component {
             <div id="elemviz" style={{ minHeight: '100vh' }}>
                 <Header></Header>
                 <div className="banner">
-                    <img className="name" src={require("../../assets/images/visualization.png")} alt="" />
+                    <img className="name" src={require("../../../../assets/images/visualization.png")} alt="Elem Visualization" />
                     <div className="animate-box">
-                        <img src={require("../../assets/images/block2.png")} alt="" />
-                        <img src={require("../../assets/images/block3.png")} alt="" />
-                        <img src={require("../../assets/images/block4.png")} alt="" />
+                        <img src={require("../../../../assets/images/block2.png")} alt="block" />
+                        <img src={require("../../../../assets/images/block3.png")} alt="block" />
+                        <img src={require("../../../../assets/images/block4.png")} alt="block" />
                     </div>
                     <Link to="/viz/vizlist" className="btn-block">
                         <button className="btn btn-primary btn-ghost btn-shine">开 始</button>

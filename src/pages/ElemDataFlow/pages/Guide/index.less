@@ -1,3 +1,5 @@
+@imgUrl: "../../../../assets/images";
+
 #dataflow .banner {
     width: 100%;
     height: 100vh;
@@ -5,7 +7,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: url("../../../../assets/images/background.png") no-repeat center;
+    background: url("@{imgUrl}/background.png") no-repeat center;
 
     .name {
         position: absolute;
@@ -15,13 +17,13 @@
     }
 
     .animate-box {
-        width: 300px;
-        height: 300px;
-        background: url("../../assets/images/block.png") no-repeat center;
+        width: 231px;
+        height: 266px;
+        background: url("@{imgUrl}/block.png") no-repeat center;
         background-size: contain;
         position: relative;
 
-        div.animate-block {
+        .animate-block {
             width: 101px;
             height: 116px;
             position: absolute;
@@ -30,172 +32,110 @@
             animation-timing-function: ease;
 
             &:nth-child(1) {
-                background-image: url("../../assets/images/block4.png");
-                left: -29px;
-                top: 18px;
+                background-image: url("@{imgUrl}/block4.png");
+                left: -50px;
+                top: 10px;
             }
 
             &:nth-child(2) {
-                width: 101px;
-                height: 116px;
-                background-image: url("../../assets/images/block4.png");
-                background-size: contain;
-                left: -29px;
-                top: 18px;
-                animation-name: data_linego2;
+                background-image: url("@{imgUrl}/block5.png");
+                left: 64px;
+                top: 75px;
+                animation-name: plat_linego2;
             }
 
             &:nth-child(3) {
-                background-image: url("../../assets/images/block1.png");
-                background-size: contain;
-                left: 100px;
-                top: 241px;
-                animation-name: data_linego3;
-                opacity: 0;
+                background-image: url("@{imgUrl}/block3.png");
+                left: 64px;
+                top: 207px;
+                animation-name: plat_linego3;
             }
 
             &:nth-child(4) {
-                background-image: url("../../assets/images/block1.png");
-                background-size: contain;
-                left: 229px;
-                top: 18px;
-                animation-name: data_linego4;
-                opacity: 0;
+                background-image: url("@{imgUrl}/block2.png");
+                left: 179px;
+                top: 9px;
+                animation-name: plat_linego4;
             }
 
-            &:nth-child(5) {
-                background-image: url("../../assets/images/block4.png");
-                background-size: contain;
-                left: 229px;
-                top: 165px;
-                animation-name: data_linego5;
-                opacity: 0;
-            }
-
-            @keyframes data_linego2 {
+            @keyframes plat_linego2 {
                 0% {
-                    left: -29px;
-                    top: 18px;
-                }
-
-                33.3% {
-                    left: 100px;
-                    top: 92px;
-                    background-image: url("../../assets/images/block1.png");
-                }
-
-                66.7% {
-                    left: 100px;
-                    top: 92px;
-                    background-image: url("../../assets/images/block1.png");
-                }
-
-                100% {
-                    left: 100px;
-                    top: 92px;
-                    background-image: url("../../assets/images/block1.png");
-                }
-            }
-
-            @keyframes data_linego3 {
-                0% {
-                    left: 100px;
-                    top: 92px;
-                    opacity: 0;
-                }
-
-                33.2% {
-                    left: 100px;
-                    top: 92px;
+                    left: -50px;
+                    top: 10px;
+                    background-image: url("@{imgUrl}/block4.png");
                     opacity: 0;
                 }
 
                 33.3% {
-                    left: 100px;
-                    top: 92px;
+                    left: 64px;
+                    top: 75px;
+                    background-image: url("@{imgUrl}/block5.png");
                     opacity: 1;
-                    background-image: url("../../assets/images/block1.png");
-                }
-
-                66.7% {
-                    left: 100px;
-                    top: 241px;
-                    background-image: url("../../assets/images/block3.png");
-                    opacity: 1;
-                }
-
-                99% {
-                    left: 229px;
-                    top: 165px;
-                    background-image: url("../../assets/images/block3.png");
-                    opacity: 0;
                 }
 
                 100% {
-                    left: 229px;
-                    top: 165px;
-                    background-image: url("../../assets/images/block3.png");
-                    opacity: 1;
+                    left: 64px;
+                    top: 75px;
+                    background-image: url("@{imgUrl}/block5.png");
                 }
             }
 
-            @keyframes data_linego4 {
+            @keyframes plat_linego3 {
                 0% {
-                    left: 100px;
-                    top: 92px;
-                    opacity: 0;
-                }
-
-                33.2% {
-                    left: 100px;
-                    top: 92px;
                     opacity: 0;
                 }
 
                 33.3% {
-                    left: 100px;
-                    top: 92px;
-                    display: block;
-                    opacity: 1;
-                    background-image: url("../../assets/images/block1.png");
-                }
-
-                66.7% {
-                    left: 229px;
-                    top: 18px;
-                    background-image: url("../../assets/images/block2.png");
-                    opacity: 1;
-                }
-
-                99% {
-                    left: 229px;
-                    top: 165px;
-                    background-image: url("../../assets/images/block2.png");
+                    left: 64px;
+                    top: 75px;
                     opacity: 0;
+                    background-image: url("@{imgUrl}/block5.png");
+                }
+
+                40% {
+                    opacity: 0.2;
+                }
+
+                66.6% {
+                    left: 64px;
+                    top: 207px;
+                    opacity: 1;
+                    background-image: url("@{imgUrl}/block3.png");
                 }
 
                 100% {
-                    left: 229px;
-                    top: 165px;
-                    background-image: url("../../assets/images/block2.png");
+                    left: 64px;
+                    top: 207px;
                     opacity: 1;
                 }
             }
 
-            @keyframes data_linego5 {
+            @keyframes plat_linego4 {
                 0% {
                     opacity: 0;
                 }
 
-                66.7% {
+                33.3% {
+                    left: 64px;
+                    top: 75px;
                     opacity: 0;
+                    background-image: url("@{imgUrl}/block5.png");
                 }
 
-                80% {
-                    opacity: 0;
+                40% {
+                    opacity: 0.2;
+                }
+
+                66.6% {
+                    left: 179px;
+                    top: 9px;
+                    opacity: 1;
+                    background-image: url("@{imgUrl}/block2.png");
                 }
 
                 100% {
+                    left: 179px;
+                    top: 9px;
                     opacity: 1;
                 }
             }
