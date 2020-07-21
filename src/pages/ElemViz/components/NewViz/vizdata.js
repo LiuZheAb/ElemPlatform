@@ -1,3 +1,4 @@
+// 上传数据源文件
 import React, { Component } from 'react';
 import { Form, Upload, Button } from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
@@ -7,6 +8,7 @@ const layout = {
     labelCol: { span: 8 },
     wrapperCol: { span: 16 },
 };
+// 获取文件列表
 const normFile = e => {
     if (Array.isArray(e)) {
         return e;
@@ -19,6 +21,7 @@ export default class index extends Component {
         loading: false,
         projectName: localStorage.getItem("newProjectName")
     };
+    // 上传后调用
     handleChange = info => {
         if (info.file.status === 'uploading') {
             this.setState({ loading: true });
@@ -31,6 +34,7 @@ export default class index extends Component {
             });
         }
     };
+    // 上传成功后调用
     onFinish = values => {
         if (!this.state.loading) {
             this.props.history.push("/viz/vizlist");

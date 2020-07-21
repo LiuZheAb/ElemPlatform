@@ -1,3 +1,4 @@
+// 可视化嵌入echarts页面
 import React, { Component } from 'react';
 import { echartsUrl } from "../../assets/url";
 

@@ -1,3 +1,4 @@
+// 可视化侧边栏组件
 import React, { Component } from 'react';
 import { Layout, Menu } from 'antd';
 import IconFont from '../IconFont';
@@ -8,6 +9,7 @@ const { Sider } = Layout;
 
 class index extends Component {
     render() {
+        // 根据当前路由判断要选择的菜单项
         let pathSnippets = this.props.location.pathname.split('/').filter(i => i);
         let defaultSelectedKeys = "viz";
         if (pathSnippets.length !== 1) {

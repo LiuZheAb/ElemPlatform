@@ -1,3 +1,4 @@
+// 顶部导航栏
 import React, { Component, lazy } from 'react';
 import { Menu, Modal } from 'antd';
 import { getCookie, removeCookie } from '../../utils/cookies';
@@ -18,6 +19,7 @@ class index extends Component {
         isLogin: true,
         collapsed: true,
     };
+    // 注销时确认对话框
     showConfirm = () => {
         let _this = this;
         confirm({
@@ -34,18 +36,21 @@ class index extends Component {
             },
         });
     }
+    // 控制注册登录模态框的显示
     showModal = () => {
         let { visible } = this.state;
         this.setState({
             visible: !visible
         })
     }
+    // 切换注册或登录表单
     changeForm = () => {
         let { isLogin } = this.state;
         this.setState({
             isLogin: !isLogin
         })
     }
+    // 控制菜单的显示
     toggleCollapsed = () => {
         let { collapsed } = this.state;
         this.setState({
@@ -121,13 +126,13 @@ class index extends Component {
                     {
                         isLogin ?
                             <>
-                                <label className="login-fun">登录</label>
+                                <label className="currentform">登录</label>
                                 <span className="changeform" onClick={this.changeForm}>免费注册</span>
                                 <Login />
                             </>
                             :
                             <>
-                                <label className="register-fun">账号注册</label>
+                                <label className="currentform">账号注册</label>
                                 <span className="changeform" onClick={this.changeForm}>已有账号，直接登陆</span>
                                 <Register />
                             </>

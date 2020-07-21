@@ -44,31 +44,31 @@
             }
         }
     }
-}
 
-.target {
-    width: calc(100% - 240px);
-    overflow: hidden;
+    .target {
+        width: calc(100% - 240px);
+        overflow: hidden;
 
-    .target-box {
-        border: 1px solid #666;
-        box-sizing: border-box;
-        color: white;
-        text-align: center;
-        font-size: 1rem;
-        position: relative;
+        .target-box {
+            border: 1px solid #666;
+            box-sizing: border-box;
+            color: white;
+            text-align: center;
+            font-size: 1rem;
+            position: relative;
 
-        .dragbar::before {
-            color: #fff;
-        }
+            .dragbar::before {
+                color: #fff;
+            }
 
-        &:hover .dragbar:before {
-            content: "按住此处拖拽";
-            width: 100%;
-            height: 30px;
-            background-color: #555;
-            position: absolute;
-            display: block;
+            &:hover .dragbar::before {
+                content: "按住此处拖拽";
+                width: 100%;
+                height: 30px;
+                background-color: #555;
+                position: absolute;
+                display: block;
+            }
         }
     }
 }

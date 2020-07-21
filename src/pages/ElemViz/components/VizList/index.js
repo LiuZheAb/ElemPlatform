@@ -1,3 +1,4 @@
+// 可视化项目列表
 import React, { Component } from 'react';
 import { List, message } from 'antd';
 import { Link } from "react-router-dom";
@@ -9,6 +10,7 @@ export default class index extends Component {
     state = {
         projectList: []
     }
+    // 获取项目列表数据
     componentDidMount() {
         let _this = this;
         axios.get(baseUrl + "/vtkPro")
@@ -20,9 +22,6 @@ export default class index extends Component {
             .catch(function (error) {
                 message.error("服务器无响应", 2);
             });
-    }
-    storageProject(project) {
-        localStorage.setItem("projectName", project)
     }
     render() {
         let { projectList } = this.state;
@@ -43,7 +42,7 @@ export default class index extends Component {
                 className="viz-list"
                 renderItem={projectList !== null && projectList.length > 0 ? item => (
                     <List.Item key={item.projectName}>
-                        <Link to={"/viz/viz"} onClick={this.storageProject.bind(this, item.projectName)}>
+                        <Link to={"/viz/viz"} onClick={() => { localStorage.setItem("projectName", item.projectName) }}>
                             <div className="box">
                                 <img src={baseUrl + item.iconUrl} alt={item.projectName} />
                                 <div className="box-content">

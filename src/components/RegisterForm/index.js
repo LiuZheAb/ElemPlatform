@@ -1,4 +1,4 @@
-//前台注册页面
+//注册表单
 import React from 'react';
 import { Form, Input, Button, Tooltip, AutoComplete, message, Row, Col } from 'antd';
 import axios from 'axios';
@@ -50,7 +50,7 @@ export default class Register extends React.Component {
     handleChange(key, e) {
         this.setState({ [key]: e.target.value });
     };
-    //表单验证
+    //表单验证--用户名
     usernameValidator = (rule, value) => {
         if (!value) {
             return Promise.reject('用户名不能为空!');
@@ -62,7 +62,7 @@ export default class Register extends React.Component {
             return Promise.resolve();
         };
     };
-
+    //表单验证--邮箱
     emailValidator = (rule, value) => {
         if (!value) {
             return Promise.reject('邮箱不能为空!');
@@ -88,6 +88,7 @@ export default class Register extends React.Component {
             email: value,
         })
     };
+    //表单验证--密码
     passwordValidator = (rule, value) => {
         if (!value) {
             return Promise.reject('请输入密码!');
@@ -97,6 +98,7 @@ export default class Register extends React.Component {
             return Promise.resolve();
         };
     };
+    //表单验证--再次输入密码
     confirmPasswordValidator = (rule, value) => {
         if (!value) {
             return Promise.reject('请再次输入密码!');
@@ -106,6 +108,7 @@ export default class Register extends React.Component {
             return Promise.resolve();
         };
     };
+    //表单验证--验证码
     captchaValidator = (rule, value) => {
         if (!value) {
             return Promise.reject("验证码不能为空!");
@@ -117,6 +120,7 @@ export default class Register extends React.Component {
             return Promise.resolve();
         };
     };
+    //表单验证--同意协议
     checkboxValidator = (rule, e) => {
         if (!e) {
             return Promise.reject("请勾选同意协议");
@@ -124,7 +128,7 @@ export default class Register extends React.Component {
             return Promise.resolve();
         };
     };
-    //注册提交表单时调用
+    //提交表单时调用
     onFinish = (values) => {
         const _this = this;
         let { username, password, captcha, email } = values;

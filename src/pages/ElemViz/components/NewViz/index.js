@@ -1,3 +1,4 @@
+// 新建项目页面
 import React, { Component } from 'react';
 import { Form, Input, Upload, Button, message } from 'antd';
 import axios from "axios";
@@ -9,6 +10,7 @@ const layout = {
     labelCol: { span: 8 },
     wrapperCol: { span: 16 },
 };
+// 获取图片路径
 const normFile = e => {
     if (Array.isArray(e)) {
         return e;
@@ -18,6 +20,7 @@ const normFile = e => {
     }
     return e && e.fileList;
 };
+// 上传文件前调用，验证图片是否符合标准
 function beforeUpload(file) {
     const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
     if (!isJpgOrPng) {
@@ -34,6 +37,7 @@ export default class index extends Component {
     state = {
         loading: false,
     };
+    // 上传文件后调用
     handleChange = info => {
         if (info.file.status === 'uploading') {
             this.setState({ loading: true });
@@ -46,6 +50,7 @@ export default class index extends Component {
             })
         }
     };
+    // 提交表单调用
     onFinish = values => {
         let { name, desc, img } = values;
         localStorage.setItem("newProjectName", name)

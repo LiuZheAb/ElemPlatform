@@ -1,3 +1,4 @@
+// 拖拽内容放置区
 import React from 'react';
 import { useDrop } from 'react-dnd';
 import { vizUrl, echartsUrl } from "../../assets/url";

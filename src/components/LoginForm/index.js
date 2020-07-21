@@ -1,4 +1,4 @@
-//前台登录页面
+//登录表单
 import React from 'react';
 import { Form, Input, Button, message, Row, Col } from 'antd';
 import axios from 'axios';
@@ -44,7 +44,7 @@ export default class Login extends React.Component {
     handleClick = () => {
         this.setState({ captchaUrl: baseUrl + "/vizCaptcha/" + this.state.captchaId + '.png?reload=' + (new Date()).getTime() });
     };
-    //表单验证
+    //表单验证--用户名
     usernameValidator = (rule, value) => {
         if (!value) {
             return Promise.reject('用户名不能为空!');
@@ -56,6 +56,7 @@ export default class Login extends React.Component {
             return Promise.resolve();
         };
     };
+    //表单验证--密码
     passwordValidator = (rule, value) => {
         if (!value) {
             return Promise.reject('请输入密码!');
@@ -67,6 +68,7 @@ export default class Login extends React.Component {
             return Promise.resolve();
         };
     };
+    //表单验证--验证码
     captchaValidator = (rule, value) => {
         if (!value) {
             return Promise.reject("验证码不能为空!");
@@ -78,7 +80,7 @@ export default class Login extends React.Component {
             return Promise.resolve();
         };
     };
-    //登录提交表单时调用
+    //提交表单时调用
     onFinish = (values) => {
         const _this = this;
         let { username, password, captcha } = values;
@@ -127,7 +129,6 @@ export default class Login extends React.Component {
                     }
                     case 3: {
                         setCookie("userName", username);
-                        // _this.props.history.push('/home');
                         break;
                     }
                     default:
@@ -143,7 +144,6 @@ export default class Login extends React.Component {
         return (
             <div className="login">
                 <Form onFinish={this.onFinish} className="login-form" ref="Form">
-                    {/* hasFeedback为输入框尾部的小图标 */}
                     <Form.Item name="username" hasFeedback rules={[{ validator: this.usernameValidator }]}>
                         <Input prefix={<UserOutlined type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="用户名" />
                     </Form.Item>
@@ -163,9 +163,7 @@ export default class Login extends React.Component {
                         </Row>
                     </Form.Item>
                     <Form.Item>
-                        <Button type="primary" htmlType="submit" className="login-form-button">
-                            登录
-                                    </Button>
+                        <Button type="primary" htmlType="submit" className="login-form-button">登录</Button>
                     </Form.Item>
                 </Form>
             </div>

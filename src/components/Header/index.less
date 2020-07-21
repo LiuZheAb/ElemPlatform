@@ -38,6 +38,7 @@
         }
     }
 
+    /*窗口宽度小于等于768px时菜单样式*/
     .vertical-menu {
         .menu-btn {
             margin: 5px 0;
@@ -86,6 +87,7 @@
         }
     }
 
+    /*窗口宽度大于768px时菜单样式*/
     .horizontal-menu {
         display: flex;
         align-items: center;
@@ -121,6 +123,25 @@
 
     a,
     a:hover {
+        color: #20d5c6;
+    }
+}
+
+.currentform {
+    font-size: 18px;
+    color: #535353;
+    font-weight: normal;
+}
+
+.changeform {
+    color: #B5B5B5;
+    float: right;
+    font-size: 12px;
+    line-height: 25px;
+    cursor: pointer;
+    transition: color .35s;
+
+    &:hover {
         color: #20d5c6;
     }
 }

@@ -1,3 +1,4 @@
+// 项目详情渲染页面
 import React, { Component } from 'react';
 import "./index.less"
 import { Layout, Drawer, Switch } from 'antd';
@@ -19,6 +20,7 @@ export default class index extends Component {
             showData: true
         }
     }
+    // 获取项目的文件列表
     componentDidMount() {
         let _this = this;
         axios.get(baseUrl + "/vtkFile", {
@@ -34,31 +36,30 @@ export default class index extends Component {
         }).catch(function (error) {
         });
     }
+    // 控制抽屉的显示
     showDrawer = () => {
         this.setState({
             visible: true,
         });
     };
+    // 控制抽屉的隐藏
     onClose = () => {
         this.setState({
             visible: false,
         });
     };
-    onChange = e => {
-        this.setState({
-            placement: e.target.value,
-        });
-    };
+    // 选择新建或打开时显示对应内容
     changeBody(i) {
         let title = ["新建", "打开"];
         this.setState({
             title: title[i]
         })
     }
+    // 切换文件时调用
     changeIframe(item) {
         this.setState({ fileName: item, visible: false, });
-        localStorage.setItem("fileName", item)
     }
+    // 控制是否显示echarts数据可视化
     handleChange = () => {
         let { showData } = this.state;
         this.setState({

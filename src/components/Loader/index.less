@@ -1,4 +1,4 @@
-.loader-content {
+#loader {
   background: rgba(0, 0, 0, 0.05);
   width: 100vw;
   height: 100vh;
@@ -8,59 +8,59 @@
   position: fixed;
   left: 0;
   top: 0;
-}
 
-#loader {
-  margin: 0 auto;
-  box-sizing: initial;
-}
+  .loader-content {
+    margin: 0 auto;
+    box-sizing: initial;
 
-#loader .outer {
-  border: 5px solid #20d5c6;
-  opacity: .9;
-  border-right-color: transparent;
-  border-left-color: transparent;
-  width: 50px;
-  height: 50px;
-  margin: 0 auto;
-  border-radius: 50%;
-  -webkit-box-shadow: 0 0 35px rgba(0, 76, 61, 0.9);
-  -moz-box-shadow: 0 0 35px rgba(0, 76, 61, 0.9);
-  box-shadow: 0 0 35px rgba(0, 76, 61, 0.9);
-  -webkit-animation: spin-pulse 1s linear infinite normal;
-  -moz-animation: spin-pulse 1s linear infinite normal;
-  -ms-animation: spin-pulse 1s linear infinite normal;
-  animation: spin-pulse 1s linear infinite normal;
-  -webkit-animation-delay: 0;
-  -moz-animation-delay: 0;
-  -o-animation-delay: 0;
-  animation-delay: 0;
-  box-sizing: initial;
-}
+    .outer {
+      border: 5px solid #20d5c6;
+      opacity: .9;
+      border-right-color: transparent;
+      border-left-color: transparent;
+      width: 50px;
+      height: 50px;
+      margin: 0 auto;
+      border-radius: 50%;
+      -webkit-box-shadow: 0 0 35px rgba(0, 76, 61, 0.9);
+      -moz-box-shadow: 0 0 35px rgba(0, 76, 61, 0.9);
+      box-shadow: 0 0 35px rgba(0, 76, 61, 0.9);
+      -webkit-animation: spin-pulse 1s linear infinite normal;
+      -moz-animation: spin-pulse 1s linear infinite normal;
+      -ms-animation: spin-pulse 1s linear infinite normal;
+      animation: spin-pulse 1s linear infinite normal;
+      -webkit-animation-delay: 0;
+      -moz-animation-delay: 0;
+      -o-animation-delay: 0;
+      animation-delay: 0;
+      box-sizing: initial;
+    }
 
-#loader .inner {
-  border: 5px solid #20d5c6;
-  opacity: .9;
-  border-left-color: transparent;
-  border-right-color: transparent;
-  border-radius: 50%;
-  -webkit-box-shadow: 0 0 15px rgba(0, 76, 61, 0.9);
-  -moz-box-shadow: 0 0 15px rgba(0, 76, 61, 0.9);
-  box-shadow: 0 0 15px rgba(0, 76, 61, 0.9);
-  width: 30px;
-  height: 30px;
-  position: relative;
-  top: -50px;
-  margin: 0 auto;
-  -webkit-animation: spin-right 1s linear infinite normal;
-  -moz-animation: spin-right 1s linear infinite normal;
-  -ms-animation: spin-right 1s linear infinite normal;
-  animation: spin-right 1s linear infinite normal;
-  -webkit-animation-delay: 0;
-  -moz-animation-delay: 0;
-  -o-animation-delay: 0;
-  animation-delay: 0;
-  box-sizing: initial;
+    .inner {
+      border: 5px solid #20d5c6;
+      opacity: .9;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      border-radius: 50%;
+      -webkit-box-shadow: 0 0 15px rgba(0, 76, 61, 0.9);
+      -moz-box-shadow: 0 0 15px rgba(0, 76, 61, 0.9);
+      box-shadow: 0 0 15px rgba(0, 76, 61, 0.9);
+      width: 30px;
+      height: 30px;
+      position: relative;
+      top: -50px;
+      margin: 0 auto;
+      -webkit-animation: spin-right 1s linear infinite normal;
+      -moz-animation: spin-right 1s linear infinite normal;
+      -ms-animation: spin-right 1s linear infinite normal;
+      animation: spin-right 1s linear infinite normal;
+      -webkit-animation-delay: 0;
+      -moz-animation-delay: 0;
+      -o-animation-delay: 0;
+      animation-delay: 0;
+      box-sizing: initial;
+    }
+  }
 }
 
 @keyframes spin-right {

@@ -1,3 +1,4 @@
+// 可视化组件拖拽页面
 import React, { useState, useCallback, useEffect } from 'react';
 import Target from './Target';
 import Item from './Item';
@@ -8,12 +9,14 @@ import { DndProvider } from 'react-dnd';
 import Backend from 'react-dnd-html5-backend';
 import { Link } from "react-router-dom";
 import "./index.less";
+import "react-grid-layout/css/styles.css";
 
 const Container = () => {
     const [size, setSize] = useState({
         clientWidth: document.documentElement.clientWidth,
         clientHeight: document.documentElement.clientHeight
     });
+    //修改屏幕大小时调用
     let handleResize = useCallback((e) => {
         setSize({
             clientWidth: document.documentElement.clientWidth,
@@ -21,9 +24,8 @@ const Container = () => {
         })
     }, [])
     //获取屏幕大小并将Target填满视区
-    let columnNum, rowNum;
-    columnNum = ((size.clientWidth - 240) / 400).toFixed();
-    rowNum = (size.clientHeight / 300).toFixed();
+    let columnNum = ((size.clientWidth - 240) / 400).toFixed();
+    let rowNum = (size.clientHeight / 300).toFixed();
     let targetHeight = size.clientHeight / rowNum;
     let targetArray = [];
     for (let i = 0; i < columnNum * rowNum * 4; i++) {
@@ -33,6 +35,7 @@ const Container = () => {
     const [items, setItems] = useState();
 
     useEffect(() => {
+        // 屏幕大小监听器
         window.addEventListener('resize', handleResize);
         // axios.get(baseUrl + "/vtkFile", {
         //     params: {

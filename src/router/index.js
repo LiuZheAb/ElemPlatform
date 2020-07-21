@@ -1,3 +1,4 @@
+// 路由控制
 import React, { Component, Suspense, lazy } from 'react';
 import { Switch, HashRouter as Router, Route } from "react-router-dom";
 import Loader from '../components/Loader';
@@ -25,7 +26,7 @@ export default class index extends Component {
                         <Route path="/help">
                             <Help />
                         </Route>
-                        <Route exact path="/">
+                        <Route path="/">
                             <Platform />
                         </Route>
                     </Switch>
