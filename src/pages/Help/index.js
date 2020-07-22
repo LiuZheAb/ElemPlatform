@@ -11,7 +11,7 @@ const Dataflow = lazy(() => import('./dataflow'));
 export default class index extends Component {
     render() {
         return (
-            <div style={{ background: `url(${background}) no-repeat center`, paddingTop: "50px" }}>
+            <div style={{ background: `url(${background}) no-repeat center`, paddingTop: "50px", backgroundAttachment: "fixed" }}>
                 <Header></Header>
                 <Route exact path="/help/helpv" component={Viz} />
                 <Route exact path="/help/helpd" component={Dataflow} />
