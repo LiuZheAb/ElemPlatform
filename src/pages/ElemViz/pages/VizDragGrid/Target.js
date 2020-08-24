@@ -1,4 +1,10 @@
-// 拖拽内容放置区
+/*
+ *文件名 : Target.js
+ *作者 : 刘哲
+ *创建时间 : 2020/8/24
+ *文件描述 : 可视化产品拖拽内容放置区
+ */
+
 import React from 'react';
 import { useDrop } from 'react-dnd';
 import { vizUrl, echartsUrl } from "../../assets/url";

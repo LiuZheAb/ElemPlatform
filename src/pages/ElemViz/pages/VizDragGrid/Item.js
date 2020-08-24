@@ -1,4 +1,10 @@
-// 侧边栏的可拖拽组件
+/*
+ *文件名 : Item.js
+ *作者 : 刘哲
+ *创建时间 : 2020/8/24
+ *文件描述 : 可视化产品侧边栏的可拖拽组件
+ */
+
 import React from 'react';
 import { useDrag } from 'react-dnd';
 

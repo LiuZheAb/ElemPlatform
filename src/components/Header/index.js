@@ -1,4 +1,10 @@
-// 顶部导航栏
+/*
+ *文件名 : index.js
+ *作者 : 刘哲
+ *创建时间 : 2020/8/24
+ *文件描述 : 顶部导航栏
+ */
+
 import React, { Component, lazy } from 'react';
 import { Menu, Modal } from 'antd';
 import { getCookie, removeCookie } from '../../utils/cookies';

@@ -1,4 +1,10 @@
-// 帮助文档
+/*
+ *文件名 : index.js
+ *作者 : 刘哲
+ *创建时间 : 2020/8/24
+ *文件描述 : 帮助文档
+ */
+
 import React, { Component, lazy } from 'react'
 import { Route } from "react-router-dom";
 import Header from "../../components/Header";

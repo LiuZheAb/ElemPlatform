@@ -1,4 +1,10 @@
-// 流程化首页
+/*
+ *文件名 : index.js
+ *作者 : 刘哲
+ *创建时间 : 2020/8/24
+ *文件描述 : 流程化产品首页
+ */
+
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import Header from "../../../../components/Header";

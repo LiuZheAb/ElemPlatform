@@ -1,4 +1,10 @@
-// 新建项目页面
+/*
+ *文件名 : index.js
+ *作者 : 刘哲
+ *创建时间 : 2020/8/24
+ *文件描述 : 可视化产品新建项目页面
+ */
+
 import React, { Component } from 'react';
 import { Form, Input, Upload, Button, message } from 'antd';
 import axios from "axios";

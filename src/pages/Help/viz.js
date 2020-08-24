@@ -1,4 +1,10 @@
-// 可视化帮助文档 
+/*
+ *文件名 : viz.js
+ *作者 : 刘哲
+ *创建时间 : 2020/8/24
+ *文件描述 : 可视化产品帮助文档
+ */
+
 import React, { Component } from 'react'
 
 export default class viz extends Component {

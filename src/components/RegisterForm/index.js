@@ -1,4 +1,10 @@
-//注册表单
+/*
+ *文件名 : index.js
+ *作者 : 刘哲
+ *创建时间 : 2020/8/24
+ *文件描述 : 注册表单
+ */
+
 import React from 'react';
 import { Form, Input, Button, Tooltip, AutoComplete, message, Row, Col } from 'antd';
 import axios from 'axios';
