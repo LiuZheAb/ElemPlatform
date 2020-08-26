@@ -32,18 +32,10 @@ class index extends Component {
                         <IconFont type="viznewtype" />
                         <Link to="/viz/newviz">新建项目</Link>
                     </Menu.Item>
-                    {/* <Menu.Item key="3">
-                        <DesktopOutlined />
-                        <Link to="/viz/vizdrag">拖拽</Link>
-                    </Menu.Item> */}
                     <Menu.Item key="vizdraggrid">
                         <IconFont type="vizhand" />
                         <Link to="/viz/vizdraggrid">拖拽</Link>
                     </Menu.Item>
-                    {/* <Menu.Item key="echarts">
-                        <IconFont type="vizdizhi" />
-                        <Link to="/viz/echarts">疫情地图</Link>
-                    </Menu.Item> */}
                 </Menu>
             </Sider>
         )

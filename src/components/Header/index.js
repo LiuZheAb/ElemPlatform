@@ -76,7 +76,7 @@ class index extends Component {
             <div className="header">
                 <div className="vertical-menu">
                     <div className="menu-btn" onClick={this.toggleCollapsed}>
-                        <IconFont type="vizego-menu"></IconFont>
+                        <IconFont type="vizego-menu"/>
                     </div>
                     <Menu className={collapsed ? "ant-menu-inline-collapsed" : ""} mode="vertical" defaultSelectedKeys={defaultSelectedKeys}>
                         <Menu.Item key="platform">
