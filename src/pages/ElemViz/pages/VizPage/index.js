@@ -95,7 +95,7 @@ export default class index extends Component {
                     >
                         <ul className="drawer-left">
                             <li className="close-menu" onClick={this.onClose}>
-                                <IconFont type="vizquit" style={{ position: "relative", top: "-3px" }} />
+                                <IconFont type="iconquit" style={{ position: "relative", top: "-3px" }} />
                             </li>
                             <li onClick={this.changeBody.bind(this, "0")}>新建</li>
                             <li onClick={this.changeBody.bind(this, "1")}>打开</li>
@@ -120,7 +120,7 @@ export default class index extends Component {
                                             {fileList ? fileList.map((item, index) => {
                                                 return (
                                                     <li key={index}>
-                                                        <IconFont type="vizfile" className="icon" /><span style={{ cursor: "pointer", color: "#1088e4" }} onClick={this.changeIframe.bind(this, item)}>{item}</span>
+                                                        <IconFont type="iconfile" className="icon" /><span style={{ cursor: "pointer", color: "#1088e4" }} onClick={this.changeIframe.bind(this, item)}>{item}</span>
                                                     </li>
                                                 )
                                             }) : null}
@@ -130,7 +130,7 @@ export default class index extends Component {
                             </div>
                         </div>
                     </Drawer>
-                    <IconFont type="vizfanhui" className="back" onClick={() => { this.props.history.goBack() }} />
+                    <IconFont type="iconfanhui" className="back" onClick={() => { this.props.history.goBack() }} />
                 </Header>
                 <Layout>
                     {showData && fileName ?

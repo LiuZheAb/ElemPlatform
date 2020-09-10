@@ -25,15 +25,15 @@ class index extends Component {
             <Sider id="viz-sider">
                 <Menu mode="inline" defaultSelectedKeys={defaultSelectedKeys}>
                     <Menu.Item key="vizlist">
-                        <IconFont type="vizall" />
+                        <IconFont type="iconall" />
                         <Link to="/viz/vizlist">所有项目</Link>
                     </Menu.Item>
                     <Menu.Item key="newviz">
-                        <IconFont type="viznewtype" />
+                        <IconFont type="iconnewtype" />
                         <Link to="/viz/newviz">新建项目</Link>
                     </Menu.Item>
                     <Menu.Item key="vizdraggrid">
-                        <IconFont type="vizhand" />
+                        <IconFont type="iconhand" />
                         <Link to="/viz/vizdraggrid">拖拽</Link>
                     </Menu.Item>
                 </Menu>
