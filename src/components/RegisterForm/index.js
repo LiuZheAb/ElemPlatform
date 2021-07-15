@@ -31,19 +31,18 @@ export default class Register extends React.Component {
         };
     };
     componentDidMount() {
-        const _this = this;
         //获取验证码
         axios.get(baseUrl + '/vizGetCaptchaId')
-            .then(function (response) {
-                _this.setState({
+            .then(response => {
+                this.setState({
                     captchaId: response.data["getCaptchaID"],
                     captchaUrl: baseUrl + "/vizCaptcha/" + response.data["getCaptchaID"] + '.png',
                     isLoaded: true,
                 });
             })
-            .catch(function (error) {
+            .catch(error => {
                 message.error("服务器无响应", 2);
-                _this.setState({
+                this.setState({
                     isLoaded: false,
                 });
             });
@@ -136,7 +135,6 @@ export default class Register extends React.Component {
     };
     //提交表单时调用
     onFinish = (values) => {
-        const _this = this;
         let { username, password, captcha, email } = values;
         axios({
             method: 'post',
@@ -146,22 +144,21 @@ export default class Register extends React.Component {
                 username: username,
                 password: password,
                 captcha: captcha,
-                captcha_id: _this.state.captchaId,
+                captcha_id: this.state.captchaId,
                 email: email
             },
             headers: { 'Content-Type': 'application/json' },
-        })
-            .then(function (response) {
-                _this.setState({
+        }).then(response=>  {
+                this.setState({
                     registerState: response.data["status"],
                     message: response.data["message"]
                 });
-                _this.refs.Form.validateFields();
+                this.refs.Form.validateFields();
                 switch (response.data["status"]) {
                     case 0: {
-                        setTimeout(_this.setState({
+                        setTimeout(this.setState({
                             registerState: 4,
-                            captchaUrl: baseUrl + "/vizCaptcha/" + _this.state.captchaId + '.png?reload=' + (new Date()).getTime(),
+                            captchaUrl: baseUrl + "/vizCaptcha/" + this.state.captchaId + '.png?reload=' + (new Date()).getTime(),
                         }), 3000);
                         break;
                     }
@@ -169,21 +166,21 @@ export default class Register extends React.Component {
                         message.success("注册成功", 1);
                         setCookie("userName", username);
                         // setTimeout(() => {
-                        //     _this.props.history.push('/home');
+                        //     this.props.history.push('/home');
                         // }, 1000);
                         break;
                     }
                     case 2: {
-                        setTimeout(_this.setState({
+                        setTimeout(this.setState({
                             registerState: 4,
-                            captchaUrl: baseUrl + "/vizCaptcha/" + _this.state.captchaId + '.png?reload=' + (new Date()).getTime(),
+                            captchaUrl: baseUrl + "/vizCaptcha/" + this.state.captchaId + '.png?reload=' + (new Date()).getTime(),
                         }), 3000);
                         break;
                     }
                     case 3: {
-                        setTimeout(_this.setState({
+                        setTimeout(this.setState({
                             registerState: 4,
-                            captchaUrl: baseUrl + "/vizCaptcha/" + _this.state.captchaId + '.png?reload=' + (new Date()).getTime(),
+                            captchaUrl: baseUrl + "/vizCaptcha/" + this.state.captchaId + '.png?reload=' + (new Date()).getTime(),
                         }), 3000);
                         break;
                     }
@@ -191,7 +188,7 @@ export default class Register extends React.Component {
                         break;
                 };
             })
-            .catch(function (error) {
+            .catch(error=>  {
                 message.error("注册失败", 2);
             });
     };

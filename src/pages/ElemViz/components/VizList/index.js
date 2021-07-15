@@ -18,14 +18,13 @@ export default class index extends Component {
     }
     // 获取项目列表数据
     componentDidMount() {
-        let _this = this;
         axios.get(baseUrl + "/vtkPro")
-            .then(function (response) {
-                _this.setState({
+            .then(response => {
+                this.setState({
                     projectList: response.data.data === null ? [] : response.data.data
                 });
             })
-            .catch(function (error) {
+            .catch(error => {
                 message.error("服务器无响应", 2);
             });
     }

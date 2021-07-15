@@ -47,7 +47,7 @@ const Container = () => {
         //     params: {
         //         projectName: localStorage.getItem("projectName") ? localStorage.getItem("projectName") : "test"
         //     }
-        // }).then(function (response) {
+        // }).catch(response => {
         //     let itemArray = []
         //     for (let i = 0; i < response.data.data.length; i++) {
         //         itemArray.push({ name: response.data.data[i], type: ItemTypes.VTK })
@@ -56,7 +56,7 @@ const Container = () => {
         //         itemArray.push({ name: `echarts${i}`, type: ItemTypes.ECHARTS })
         //     }
         //     setItems(itemArray);
-        // }).catch(function (error) {
+        // }).catch(error => {
         // });
         let vtkData = ['dem.csv', 'sgy2d.csv', 'Fmesh.vtk', 'Fmesh1.vtk', 'mesh.flavia.msh', 'mesh1.flavia.msh', 'P90.msh', 'w42vtk.post.msh', 'AMG_F1_W10.msh'];
         let itemArray = []

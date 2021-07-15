@@ -60,7 +60,6 @@ export default class index extends Component {
     onFinish = values => {
         let { name, desc, img } = values;
         localStorage.setItem("newProjectName", name)
-        let _this = this;
         if (!this.state.loading) {
             axios({
                 method: 'post',
@@ -73,16 +72,16 @@ export default class index extends Component {
                 headers: {
                     'Content-Type': 'application/json'
                 }
-            }).then(function (response) {
+            }).then(response => {
                 if (response.data.state === 1) {
-                    _this.props.history.push("/viz/newviz/uploadData")
+                    this.props.history.push("/viz/newviz/uploadData")
                     message.success("新建成功", 2);
                 } else if (response.data.state === 2) {
                     message.error("项目创建失败");
                 }
 
             })
-            // .catch(function (error) {
+            // .catch(error => {
             //     message.error("服务器无响应", 2);
             // });
         } else {

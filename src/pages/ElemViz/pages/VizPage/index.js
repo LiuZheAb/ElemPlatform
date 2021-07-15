@@ -28,18 +28,17 @@ export default class index extends Component {
     }
     // 获取项目的文件列表
     componentDidMount() {
-        let _this = this;
         axios.get(baseUrl + "/vtkFile", {
             params: {
                 projectName: localStorage.getItem("projectName")
             }
-        }).then(function (response) {
-            _this.setState({
+        }).then(response => {
+            this.setState({
                 fileList: response.data.data,
                 fileName: response.data.data[0],
 
             });
-        }).catch(function (error) {
+        }).catch(error => {
         });
     }
     // 控制抽屉的显示

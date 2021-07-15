@@ -29,19 +29,18 @@ export default class Login extends React.Component {
         };
     };
     componentDidMount() {
-        const _this = this;
         //获取验证码
         axios.get(baseUrl + '/vizGetCaptchaId')
-            .then(function (response) {
-                _this.setState({
+            .then(response => {
+                this.setState({
                     captchaId: response.data["getCaptchaID"],
                     captchaUrl: baseUrl + "/vizCaptcha/" + response.data["getCaptchaID"] + '.png',
                     isLoaded: true,
                 });
             })
-            .catch(function (error) {
+            .catch(error => {
                 message.error("验证码获取失败", 2);
-                _this.setState({
+                this.setState({
                     isLoaded: false,
                 });
             });
@@ -88,7 +87,6 @@ export default class Login extends React.Component {
     };
     //提交表单时调用
     onFinish = (values) => {
-        const _this = this;
         let { username, password, captcha } = values;
         axios({
             headers: {
@@ -101,49 +99,47 @@ export default class Login extends React.Component {
                 username: username,
                 password: password,
                 captcha: captcha,
-                captcha_id: _this.state.captchaId,
+                captcha_id: this.state.captchaId,
             }
-        })
-            .then(function (response) {
-                _this.setState({
-                    loginState: response.data["status"],
-                    message: response.data["message"]
-                });
-                _this.refs.Form.validateFields();
-                switch (response.data["status"]) {
-                    case 0: {
-                        //若登陆失败，将登录状态重置为4，为了将错误信息重置
-                        setTimeout(_this.setState({
-                            loginState: 4,
-                            captchaUrl: baseUrl + "/vizCaptcha/" + _this.state.captchaId + '.png?reload=' + (new Date()).getTime(),
-                        }), 3000);
-                        break;
-                    }
-                    case 1: {
-                        setTimeout(_this.setState({
-                            loginState: 4,
-                            captchaUrl: baseUrl + "/vizCaptcha/" + _this.state.captchaId + '.png?reload=' + (new Date()).getTime(),
-                        }), 3000);
-                        break;
-                    }
-                    case 2: {
-                        setTimeout(_this.setState({
-                            loginState: 4,
-                            captchaUrl: baseUrl + "/vizCaptcha/" + _this.state.captchaId + '.png?reload=' + (new Date()).getTime(),
-                        }), 3000);
-                        break;
-                    }
-                    case 3: {
-                        setCookie("userName", username);
-                        break;
-                    }
-                    default:
-                        break;
-                };
-            })
-            .catch(function (error) {
-                message.error("登录失败", 2);
+        }).then(response => {
+            this.setState({
+                loginState: response.data["status"],
+                message: response.data["message"]
             });
+            this.refs.Form.validateFields();
+            switch (response.data["status"]) {
+                case 0: {
+                    //若登陆失败，将登录状态重置为4，为了将错误信息重置
+                    setTimeout(this.setState({
+                        loginState: 4,
+                        captchaUrl: baseUrl + "/vizCaptcha/" + this.state.captchaId + '.png?reload=' + (new Date()).getTime(),
+                    }), 3000);
+                    break;
+                }
+                case 1: {
+                    setTimeout(this.setState({
+                        loginState: 4,
+                        captchaUrl: baseUrl + "/vizCaptcha/" + this.state.captchaId + '.png?reload=' + (new Date()).getTime(),
+                    }), 3000);
+                    break;
+                }
+                case 2: {
+                    setTimeout(this.setState({
+                        loginState: 4,
+                        captchaUrl: baseUrl + "/vizCaptcha/" + this.state.captchaId + '.png?reload=' + (new Date()).getTime(),
+                    }), 3000);
+                    break;
+                }
+                case 3: {
+                    setCookie("userName", username);
+                    break;
+                }
+                default:
+                    break;
+            };
+        }).catch(error => {
+            message.error("登录失败", 2);
+        });
     };
     render() {
         const { captchaUrl } = this.state;
